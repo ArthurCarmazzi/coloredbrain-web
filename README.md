@@ -1,10 +1,12 @@
 # Colored Brain website
 
-Static front end for the Colored Brain system (app.coloredbrain.com). Two pages, plain HTML and CSS, no build step, no framework.
+Static front end for the Colored Brain system (app.coloredbrain.com). Plain HTML and CSS, no build step, no framework.
 
 | Page | Audience | Job |
 |---|---|---|
 | `index.html` | Individuals with a coach code, team leaders, HR | Take the CBCI, see the four processes, connect a team, buy codes and AI plans |
+| `pricing.html` | Buyers | Code packs and AI plans; every buy button goes to app.coloredbrain.com checkout |
+| `intro.html` | Whop buyers (hidden) | Copy of the home page with a Special Introductory Offer banner, no Classic CBCI button, buy buttons pointing to Whop. Not linked from any menu and marked noindex; share the direct URL only (/intro) |
 | `trainers.html` | Coaches, trainers, consultants | The team-not-person premise, Predictive Psychology AI, client flow, three certification tiers, payback calculator |
 
 ## Run it
@@ -37,6 +39,9 @@ img/              logo, four brain illustrations (same files the app serves), bo
 - Nothing claims an outcome the assessment alone doesn't produce; client program results are labelled as such.
 
 ## Open items before launch
+
+- Paste the 11 Whop checkout URLs into the `WHOP` list at the bottom of `intro.html`. Until then those buttons fall back to the pricing section.
+- When the home page changes, update `intro.html` to match (it is a copy, not a template).
 
 - Seven `[confirm]` tags on `trainers.html` (certification format, duration, AI inclusion per tier, upgrade policy, accreditation wording).
 - Certification buttons link to home.coloredbrain.com/certification, whose detail pages are empty. Point them at real checkout when it exists.
