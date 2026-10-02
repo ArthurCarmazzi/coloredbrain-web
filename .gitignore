@@ -1,7 +1,6 @@
 .DS_Store
 Thumbs.db
+desktop.ini
 *.log
 node_modules/
-desktop.ini
-Thumbs.db
-.DS_Store
+.env
