@@ -56,7 +56,7 @@ public/img/          logo, brain illustrations, book cover, trainer kit, seals
 
 - Process names: Green = Chaotic, Red = Linear, Purple = Relational, Blue = Intuitive. Same as the app's dashboard. Colors #22C55E #EF4444 #A855F7 #3B82F6.
 - The AI is called Predictive Psychology AI on the site.
-- Prices match app.coloredbrain.com as of 26 Sep 2026. The "50% off until 19 October" badge in `public/index.html` and `public/intro.html` must be removed after that date.
+- Prices match app.coloredbrain.com as of 12 Oct 2026 (Organization Intelligence $158.50/mo, $1,559.64/yr). The "Launch pricing until 31 December" badge in `public/index.html`, `public/pricing.html` and `public/intro.html` must be removed after that date.
 - No dashes in copy. Commas, colons or full stops.
 - Nothing claims an outcome the assessment alone doesn't produce; client program results are labelled as such.
 
