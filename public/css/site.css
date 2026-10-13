@@ -407,3 +407,9 @@ ol.journey{padding:0;margin:0}
 .price-steps b{font:500 12.5px var(--mono);letter-spacing:.1em;color:var(--muted);display:block;margin-bottom:6px}
 .bundle{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px 28px;margin-top:20px}
 @media (max-width:760px){.price-steps{grid-template-columns:1fr}.bundle{grid-template-columns:1fr}}
+
+/* Watch: Tella embed under the four steps */
+.watch{margin:40px 0 0;display:grid;gap:12px}
+.watch-frame{position:relative;width:100%;aspect-ratio:40/19;border-radius:var(--r);overflow:hidden;background:#1b1836;border:1px solid var(--line);box-shadow:0 24px 60px -30px rgba(18,22,28,.35)}
+.watch-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.watch figcaption{font-size:14px;color:var(--muted);max-width:720px}
