@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The $10 Million Question</title>
+<meta name="description" content="Answer five questions about what you would do with $10 million and see your Emotional Drive map, then watch the Colored Brain engine predict a team. Free, two minutes.">
+<meta property="og:title" content="The $10 Million Question">
+<meta property="og:description" content="Answer five questions about what you would do with $10 million and see your Emotional Drive map, then watch the Colored Brain engine predict a team. Free, two minutes.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Facebook Pixel (same id as coloredbrain.com/webinar) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','304613799943496');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=304613799943496&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: one column, one question on screen at a time, CBCI editorial system (mono kickers, ink buttons, soft grey ground); the 8 drive hues appear only as data. */
+:root{
+  --bg:#F3F5F4; --surface:#FFFFFF; --ink:#12161C; --ink2:#3C4450; --muted:#6A7380;
+  --line:#DCE1E0; --tint:#E8ECEA; --accent:#12161C; --accent-ink:#FFFFFF;
+  --hi:#FFE9A8; --hi-ink:#5B4600;
+  --d1:#E0567B; --d2:#5B7FA6; --d3:#E8822E; --d4:#F0AD0E; --d5:#2FA05A; --d6:#1FA3A3; --d7:#8458C9; --d8:#3B82F6;
+  --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101316; --surface:#171B21; --ink:#EDEFF2; --ink2:#C3CAD4; --muted:#8B94A1;
+    --line:#2A3139; --tint:#1D232A; --accent:#EDEFF2; --accent-ink:#12161C;
+    --hi:#3A3113; --hi-ink:#F0D98A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101316; --surface:#171B21; --ink:#EDEFF2; --ink2:#C3CAD4; --muted:#8B94A1;
+  --line:#2A3139; --tint:#1D232A; --accent:#EDEFF2; --accent-ink:#12161C;
+  --hi:#3A3113; --hi-ink:#F0D98A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 72px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+p{margin:0}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;font-weight:500}
+.kicker::before{content:"";width:22px;height:2px;background:var(--ink);flex:none}
+.logo{font-family:var(--display);font-weight:800;font-size:19px;display:flex;align-items:baseline;gap:9px;margin-bottom:40px}
+.logo em{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:600;font-size:16px;border-radius:999px;padding:13px 26px;border:1px solid var(--accent);cursor:pointer;text-decoration:none;background:var(--accent);color:var(--accent-ink);transition:transform .12s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--d4);outline-offset:2px}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.btn-ghost{background:transparent;color:var(--ink)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.step{display:flex;flex-direction:column;gap:22px}
+.hero h1{font-size:clamp(38px,7vw,64px);font-weight:800;line-height:1.02;letter-spacing:-.01em}
+.hero h1 .hi{box-shadow:inset 0 -0.34em 0 var(--hi)}
+.hero p{color:var(--ink2);font-size:19px;max-width:56ch}
+.statline{display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.statline b{color:var(--ink);font-weight:500}
+.progress{display:flex;gap:6px}
+.progress span{flex:1;height:4px;border-radius:2px;background:var(--tint)}
+.progress span.on{background:var(--ink)}
+.q h2{font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.1}
+.q .hint{color:var(--muted);font-size:14.5px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:14px;align-items:flex-start;text-align:left;padding:16px 18px;border:1px solid var(--line);background:var(--surface);border-radius:12px;cursor:pointer;font:inherit;color:var(--ink);font-size:16px;line-height:1.4;transition:border-color .12s}
+.opt .box{width:20px;height:20px;border-radius:6px;border:2px solid var(--line);flex:none;margin-top:2px;display:grid;place-items:center;font-size:13px;color:var(--accent-ink)}
+.opt[aria-pressed="true"]{border-color:var(--ink)}
+.opt[aria-pressed="true"] .box{background:var(--ink);border-color:var(--ink)}
+.opt[aria-pressed="true"] .box::after{content:"✓"}
+.opt:focus-visible{outline:3px solid var(--d4);outline-offset:2px}
+.nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+/* Results */
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.res-grid>*{min-width:0}
+#radar{width:100%;height:auto;display:block}
+.drivelist{display:flex;flex-direction:column;gap:10px}
+.drow{display:grid;grid-template-columns:14px 1fr 44px;gap:12px;align-items:center;font-size:15px}
+.drow .sw{width:12px;height:12px;border-radius:4px}
+.drow .bar{height:8px;border-radius:999px;background:var(--tint);overflow:hidden}
+.drow .bar i{display:block;height:100%;border-radius:999px;background:var(--dc)}
+.drow b{font-family:var(--mono);font-weight:500;font-size:13px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.drow.top{font-weight:600}
+.readout{padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.readout h3{font-size:19px;font-weight:700}
+.readout p{color:var(--ink2);font-size:15.5px}
+/* Team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.member{padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.member .who{display:flex;align-items:center;gap:10px}
+.member .av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:14px;color:#fff;flex:none}
+.member .nm{font-weight:600;font-size:15px}
+.member .role{font-size:12.5px;color:var(--muted)}
+.member .drv{display:flex;gap:5px}
+.member .drv i{width:10px;height:10px;border-radius:3px;display:block}
+.member .pred{font-size:14px;color:var(--ink2);border-top:1px solid var(--line);padding-top:8px;margin-top:2px}
+.member.you{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.scenario{background:var(--tint);border-radius:var(--r);padding:20px 22px;display:flex;flex-direction:column;gap:6px}
+.scenario .mono{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.scenario p{font-size:17px;font-weight:600}
+.flag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+/* Form */
+form{display:grid;gap:12px}
+label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:grid;gap:6px}
+input,select{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:13px 16px;font-family:var(--body);font-size:16px;width:100%}
+input:focus-visible,select:focus-visible{outline:3px solid var(--d4);outline-offset:1px}
+.fine{font-size:13.5px;color:var(--muted)}
+.thanks{padding:28px;display:flex;flex-direction:column;gap:12px}
+.thanks h3{font-size:24px;font-weight:800}
+.err{color:#C23B3B;font-size:14px}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+@media (max-width:720px){.res-grid,.team{grid-template-columns:1fr}}
+@media (prefers-reduced-motion: reduce){.btn,.opt{transition:none}}
+</style>
+
+<div class="wrap">
+<div class="logo">Colored Brain <em>Emotional Drives demo</em></div>
+
+<!-- 0 Hero -->
+<section class="step" id="s-hero">
+  <div class="kicker">Five questions, about two minutes</div>
+  <h1 class="hero-h"><span class="hi">$10 million</span> lands in your account tomorrow. What you do with it says more than any personality test.</h1>
+  <p class="hero p-lead">Every choice you make with the money reveals which of the 8 Emotional Drives run you. Answer five questions, see your drive map, then watch what the Colored Brain engine predicts a team will do when the pressure is on.</p>
+  <div class="statline"><span><b>8</b> emotional drives</span><span><b>5</b> questions</span><span><b>1</b> team prediction</span><span><b>0</b> cost</span></div>
+  <div><button class="btn" id="start">Answer the $10M question</button></div>
+</section>
+
+<!-- 1 Questions -->
+<section class="step" id="s-q" hidden>
+  <div class="progress" id="prog"></div>
+  <div class="q">
+    <div class="kicker" id="qnum">Question 1 of 5</div>
+    <h2 id="qtext" style="margin-top:12px"></h2>
+    <p class="hint" style="margin-top:8px">Pick everything that is true for you. Most people pick two or three.</p>
+  </div>
+  <div class="opts" id="opts"></div>
+  <div class="nav">
+    <button class="btn btn-ghost" id="back">Back</button>
+    <button class="btn" id="next" disabled>Next</button>
+  </div>
+</section>
+
+<!-- 2 Results -->
+<section class="step" id="s-res" hidden>
+  <div class="kicker">Your Emotional Drive map</div>
+  <h2 style="font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.1" id="res-h"></h2>
+  <div class="res-grid">
+    <div class="card" style="padding:20px"><svg id="radar" viewBox="0 0 360 360" role="img" aria-label="Radar chart of your scores across the eight emotional drives"></svg></div>
+    <div class="drivelist" id="dlist"></div>
+  </div>
+  <div class="card readout" id="readout"></div>
+  <div><button class="btn" id="to-team">Now put me in a team</button></div>
+</section>
+
+<!-- 3 Team -->
+<section class="step" id="s-team" hidden>
+  <div class="kicker">What the engine predicts</div>
+  <h2 style="font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.1">Same news, six different reactions. That is why teams misfire.</h2>
+  <p style="color:var(--ink2)">Here is a sample product team. The Colored Brain system already holds each member's Emotional Drives and their Clarity Process. Watch what the engine predicts when this message lands on a Monday morning.</p>
+  <div class="scenario"><span class="mono">Monday 09:02 · message from the CEO</span><p>"Launch moves from 12 December to 28 November. Scope stays the same. I know you can do it."</p></div>
+  <div class="team" id="team"></div>
+  <p class="flag">Sample team, illustrative. Your card uses your real answers from the last step.</p>
+  <div class="card readout" id="team-read"></div>
+  <div><button class="btn" id="to-form">Get my full report</button></div>
+</section>
+
+<!-- 4 Opt in -->
+<section class="step" id="s-form" hidden>
+  <div class="kicker">Your full report</div>
+  <h2 style="font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.1">Get your Emotional Drive report and a seat in the 3 session Colored Brain Masterclass</h2>
+  <p style="color:var(--ink2)">The report explains your top two drives, what fulfils them, what happens when they are starved, and how to read them in the people you train or coach. The masterclass is three live sessions for coaches, trainers and consultants on turning this data into paid debriefs, team workshops and consulting work. Your own full CBCI assessment is included, free.</p>
+  <div class="scenario"><span class="mono">Next cohort · live online · GMT+8</span><p>Friday 30 October, Saturday 31 October and Tuesday 3 November</p></div>
+  <form id="optin" class="card" style="padding:24px" novalidate>
+    <label>First name<input id="fname" name="first_name" autocomplete="given-name" required></label>
+    <label>Email<input id="email" name="email" type="email" autocomplete="email" required></label>
+    <label>I am mainly a<select id="role" name="role">
+      <option value="trainer">Trainer or facilitator</option>
+      <option value="coach">Coach</option>
+      <option value="consultant">Consultant</option>
+      <option value="hr">HR or L&amp;D professional</option>
+      <option value="other">Something else</option>
+    </select></label>
+    <p class="err" id="ferr" hidden></p>
+    <button class="btn" type="submit" id="submit">Send my report and claim my seat</button>
+    <p class="fine">One email with your report. You confirm your masterclass seat on the next screen.</p>
+  </form>
+</section>
+
+<!-- 5 Thanks -->
+<section class="step" id="s-done" hidden>
+  <div class="card thanks">
+    <h3>Report on its way. One more click for your seat.</h3>
+    <p id="done-p" style="color:var(--ink2)"></p>
+    <p style="color:var(--ink2)">Session 1 on 30 October puts your own CBCI results next to the drives you just saw. Session 2 on 31 October is the debrief script that becomes a paid offer. Session 3 on 3 November is the team workshop path. Your details are already filled in on the next page.</p>
+    <div><a class="btn" id="book" href="#" target="_blank" rel="noopener">Confirm my masterclass seat</a></div>
+    <p class="fine" id="book-note" hidden>Registration link not connected yet. Reply to the report email and we will register you by hand.</p>
+  </div>
+</section>
+
+<footer><span>Directive Communication Psychology · Colored Brain</span><span>8 Emotional Drives model, Arthur Carmazzi</span></footer>
+</div>
+
+<script>
+/* ===== Config: Kartra form post. Set KARTRA_ACTION to the form's action URL from Kartra (Forms > your form > embed code). Field names below must match the Kartra form fields. ===== */
+const KARTRA_ACTION = "https://app.kartra.com/process/add_lead/9KCyRokbYfXc"; // Kartra form "CBCI WEBINAR" (id 396, double opt in)
+const BOOKING_URL = "https://event.webinarjam.com/register/259/z4l2gaz2";  // WebinarJam registration for the Client-Magnet Masterclass (name and email are prefilled)
+const KARTRA_FIELDS = { first_name:"first_name", email:"email", role:"custom_role", drives:"custom_drives", utm:"custom_utm" };
+
+const DRIVES = [
+  {k:"belong", n:"Belonging / Love", c:"var(--d1)", hex:"#E0567B", fed:"being connected to people who matter", starved:"withdraws, or over gives to stay included"},
+  {k:"secure", n:"Control / Security", c:"var(--d2)", hex:"#5B7FA6", fed:"knowing the plan will hold", starved:"slows everything down to check, then checks again"},
+  {k:"divers", n:"Diversity", c:"var(--d3)", hex:"#E8822E", fed:"variety and something new", starved:"gets bored and quietly disengages"},
+  {k:"recog", n:"Recognition", c:"var(--d4)", hex:"#F0AD0E", fed:"being seen and acknowledged", starved:"works harder at being noticed than at the work"},
+  {k:"achieve", n:"Achievement", c:"var(--d5)", hex:"#2FA05A", fed:"finishing things", starved:"starts cutting corners to get to done"},
+  {k:"grow", n:"Challenge / Growth", c:"var(--d6)", hex:"#1FA3A3", fed:"learning and being stretched", starved:"looks for the exit, politely"},
+  {k:"excel", n:"Excellence", c:"var(--d7)", hex:"#8458C9", fed:"pride in work done their way", starved:"refuses to ship what they are not proud of"},
+  {k:"contrib", n:"Contribution", c:"var(--d8)", hex:"#3B82F6", fed:"making a difference for others", starved:"feels the work is pointless, and says so"},
+];
+
+/* Scoring follows the DC mapping rules: saving and safe investing carry the most Security weight; starting a business is Achievement with the business type setting the sub drive; standing out is Recognition; learning is Growth; building it your own way is Excellence; high Security dampens the other drives. */
+const QUESTIONS = [
+  {t:"The $10M is in the account. What do you do in the first month?", o:[
+    ["Clear every debt in my family and set my parents up for life",{belong:3,contrib:2}],
+    ["Put most of it in safe investments and build a 20 year plan",{secure:4}],
+    ["Start the business I have been talking about for years",{achieve:3}],
+    ["Book a year of travel to places I have never been",{divers:3,grow:1}],
+    ["Fund a school, a clinic or a cause I believe in",{contrib:3}],
+    ["Buy something that makes people stop and stare",{recog:3}],
+    ["Enrol in the best program in the world for what I love",{grow:3}],
+  ]},
+  {t:"Say you start a business. Which kind?", o:[
+    ["Whatever is trending and proven, low risk",{secure:2,achieve:2}],
+    ["A fashion or lifestyle brand with my name on it",{recog:3,achieve:1}],
+    ["Training, education or coaching",{grow:3,contrib:1}],
+    ["A family business with the people I love",{belong:3,achieve:1}],
+    ["Something nobody has done, built exactly my way",{excel:3,achieve:1}],
+    ["A social enterprise that solves a real problem",{contrib:3,achieve:1}],
+    ["Several small ventures, I would get bored with one",{divers:3}],
+  ]},
+  {t:"And the house?", o:[
+    ["Same safe neighbourhood, close to family",{belong:2,secure:2}],
+    ["Designed by me, every detail, even if it takes three years",{excel:3}],
+    ["A landmark. People should photograph it",{recog:3,excel:1}],
+    ["A different city every year, I would rent",{divers:3}],
+    ["I would stay where I am, nothing needs to change",{secure:3}],
+    ["Big enough to host everyone and help people who need a place",{contrib:2,belong:2}],
+  ]},
+  {t:"Six months later. What is quietly bugging you?", o:[
+    ["Nothing is finished yet",{achieve:3}],
+    ["Nobody has really noticed",{recog:3}],
+    ["Every day looks the same",{divers:3}],
+    ["I am not learning anything new",{grow:3}],
+    ["I keep worrying about losing it",{secure:3}],
+    ["I am not making a difference to anyone",{contrib:3}],
+    ["I feel far from the people I care about",{belong:3}],
+    ["The quality of what I built is not right yet",{excel:3}],
+  ]},
+  {t:"Who do you tell, and how?", o:[
+    ["Everyone. Big announcement, no apologies",{recog:3,divers:1}],
+    ["Only family, over dinner",{belong:3}],
+    ["Nobody. I plan quietly for a year first",{secure:3}],
+    ["The people I can now help",{contrib:3}],
+    ["My mentors, to ask what I should learn next",{grow:3}],
+    ["My old team. I want to finish what we started, properly",{achieve:2,excel:2}],
+  ]},
+];
+
+const answers = QUESTIONS.map(()=>new Set());
+let qi = 0;
+const $ = id=>document.getElementById(id);
+const steps = ["s-hero","s-q","s-res","s-team","s-form","s-done"];
+function show(id){ steps.forEach(s=>$(s).hidden = s!==id); window.scrollTo({top:0,behavior:"smooth"}); }
+
+function renderQ(){
+  const q = QUESTIONS[qi];
+  $("qnum").textContent = `Question ${qi+1} of ${QUESTIONS.length}`;
+  $("qtext").textContent = q.t;
+  $("prog").innerHTML = QUESTIONS.map((_,i)=>`<span class="${i<=qi?"on":""}"></span>`).join("");
+  $("opts").innerHTML = q.o.map((o,i)=>`<button type="button" class="opt" data-i="${i}" aria-pressed="${answers[qi].has(i)}"><span class="box"></span><span>${o[0]}</span></button>`).join("");
+  $("next").disabled = answers[qi].size===0;
+  $("next").textContent = qi===QUESTIONS.length-1 ? "Show my drive map" : "Next";
+  $("back").hidden = qi===0;
+}
+$("opts").addEventListener("click",e=>{
+  const b = e.target.closest(".opt"); if(!b) return;
+  const i = +b.dataset.i;
+  answers[qi].has(i) ? answers[qi].delete(i) : answers[qi].add(i);
+  b.setAttribute("aria-pressed", answers[qi].has(i));
+  $("next").disabled = answers[qi].size===0;
+});
+$("start").onclick = ()=>{ qi=0; renderQ(); show("s-q"); };
+$("back").onclick = ()=>{ if(qi>0){qi--; renderQ();} };
+$("next").onclick = ()=>{ if(qi<QUESTIONS.length-1){qi++; renderQ();} else { computeAndShow(); } };
+
+let scores = {};
+function score(){
+  const raw = Object.fromEntries(DRIVES.map(d=>[d.k,0]));
+  QUESTIONS.forEach((q,i)=>answers[i].forEach(oi=>{ for(const [k,v] of Object.entries(q.o[oi][1])) raw[k]+=v; }));
+  const max = Math.max(...Object.values(raw),1);
+  const out = {};
+  for(const k in raw) out[k] = Math.round(raw[k]/max*100)/10; // 0 to 10
+  // High Security leaves the other drives less fulfilled
+  const top = DRIVES.map(d=>d.k).sort((a,b)=>out[b]-out[a]);
+  if(top[0]==="secure"){ for(const k in out) if(k!=="secure") out[k]=Math.round(out[k]*8.5)/10; }
+  return out;
+}
+function ranked(){ return [...DRIVES].sort((a,b)=>scores[b.k]-scores[a.k]); }
+
+function drawRadar(sc){
+  const n=DRIVES.length, cx=180, cy=180, R=120;
+  const pt=(i,r)=>{const a=-Math.PI/2+i*2*Math.PI/n; return [cx+r*Math.cos(a), cy+r*Math.sin(a)];};
+  let s="";
+  [2.5,5,7.5,10].forEach(v=>{ s+=`<polygon points="${DRIVES.map((_,i)=>pt(i,R*v/10).join(",")).join(" ")}" fill="none" stroke="var(--line)" stroke-width="1"/>`; });
+  DRIVES.forEach((d,i)=>{ const [x,y]=pt(i,R); s+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="var(--line)"/>`; });
+  const poly = DRIVES.map((d,i)=>pt(i,R*sc[d.k]/10).join(",")).join(" ");
+  s+=`<polygon points="${poly}" fill="var(--ink)" fill-opacity=".12" stroke="var(--ink)" stroke-width="2"/>`;
+  DRIVES.forEach((d,i)=>{ const [x,y]=pt(i,R*sc[d.k]/10); s+=`<circle cx="${x}" cy="${y}" r="5" fill="${d.hex}" stroke="var(--surface)" stroke-width="2"/>`; });
+  DRIVES.forEach((d,i)=>{ const [x,y]=pt(i,R+28); const anchor = Math.abs(x-cx)<8?"middle":(x<cx?"end":"start"); const lbl=d.n.split(" / ")[0]; s+=`<text x="${x}" y="${y+4}" text-anchor="${anchor}" font-family="var(--mono)" font-size="11" fill="var(--muted)">${lbl}</text>`; });
+  $("radar").innerHTML = s;
+}
+
+function computeAndShow(){
+  scores = score();
+  const r = ranked();
+  $("res-h").textContent = `You run on ${r[0].n.split(" / ")[0]} and ${r[1].n.split(" / ")[0]}.`;
+  drawRadar(scores);
+  $("dlist").innerHTML = r.map((d,i)=>`<div class="drow ${i<2?"top":""}" style="--dc:${d.hex}"><span class="sw" style="background:${d.hex}"></span><div><div style="display:flex;justify-content:space-between;font-size:14px"><span>${d.n}</span></div><div class="bar"><i style="width:${scores[d.k]*10}%"></i></div></div><b>${scores[d.k].toFixed(1)}</b></div>`).join("");
+  const low = r[r.length-1];
+  $("readout").innerHTML = `<h3>What this means on a Tuesday</h3>
+    <p>${r[0].n} is fed by ${r[0].fed}. ${r[1].n} is fed by ${r[1].fed}. When both are fed you are at your best. Starve the first one and you ${r[0].starved}.</p>
+    <p>${low.n} sits at the bottom. Nothing wrong with that, but a teammate who runs on it will read you as not caring about ${low.fed}. That mismatch, not personality, is where most team friction starts.</p>
+    <p class="fine">The full engine combines these drives with your Clarity Process (your brain colour) to predict how you will act in a specific team under specific pressure. That is the next step.</p>`;
+  show("s-res");
+}
+
+/* Sample team. Illustrative. Each member: name, role, Clarity Process, top two drives, predicted reaction to the deadline message. */
+const TEAM = [
+  {n:"Mei", r:"Product lead", cp:"Blue", d:["achieve","recog"], p:"Says yes in the meeting before anyone else. Will quietly drop two features by Thursday and present it as a win."},
+  {n:"Farid", r:"Engineering", cp:"Green", d:["secure","excel"], p:"Pushes back within the hour with a risk list. Reads the CEO's confidence as pressure, not trust. Needs a written plan before he moves."},
+  {n:"Priya", r:"Design", cp:"Purple", d:["excel","grow"], p:"Goes silent for two days, then ships something better than the brief. Will not release work she is not proud of, deadline or not."},
+  {n:"Daniel", r:"QA", cp:"Red", d:["divers","belong"], p:"Treats it as an adventure and rallies people. By week two the novelty is gone and he is the one everyone leans on emotionally."},
+  {n:"Aisha", r:"Marketing", cp:"Red", d:["contrib","belong"], p:"Asks who this helps and why it matters to customers. If she gets a real answer she carries the team. If not, the pushback comes through her."},
+];
+const CP_HEX = {Red:"#C23B3B",Blue:"#3B82F6",Green:"#2FA05A",Purple:"#8458C9"};
+function youPrediction(){
+  const r = ranked(); const a=r[0].k, b=r[1].k;
+  const lines = {
+    achieve:"You say yes and start cutting scope by Wednesday. Done matters more to you than perfect.",
+    secure:"You want the new plan in writing before you commit. The CEO's confidence reads as risk to you.",
+    recog:"You volunteer loudly for the hardest part. Make sure someone notices, or you will stop.",
+    belong:"Your first thought is the team, not the date. You check how everyone else is taking it before you react.",
+    divers:"You are energised for exactly nine days. Build in something new at day ten or you drift.",
+    grow:"You treat it as a stretch. If it feels like the same work faster, you disengage.",
+    excel:"You will hit the date only if you can ship something you are proud of. Otherwise you push the date, quietly.",
+    contrib:"You ask why the launch matters to customers. Give you that answer and you carry people.",
+  };
+  return lines[a] + " Your " + DRIVES.find(d=>d.k===b).n.split(" / ")[0] + " drive is the one that decides whether you stay the course past week two.";
+}
+function renderTeam(){
+  const r = ranked();
+  const cards = TEAM.map(m=>member(m,false));
+  cards.push(member({n:"You", r:"Your drives", cp:null, d:[r[0].k,r[1].k], p:youPrediction()}, true));
+  $("team").innerHTML = cards.join("");
+  $("team-read").innerHTML = `<h3>What a certified practitioner does with this</h3>
+    <p>Six people, one message, six predictable reactions. The practitioner briefs the CEO before the message goes out: give Farid the plan in writing, give Aisha the customer reason, give Mei a scope conversation before she makes it herself. Same deadline, no friction.</p>
+    <p>No DISC profile predicts any of that, because DISC describes the individual in isolation. Emotional Drives plus Clarity Process predicts the person inside this team, under this pressure.</p>`;
+}
+function member(m,you){
+  const dr = m.d.map(k=>DRIVES.find(d=>d.k===k));
+  const av = you ? `<span class="av" style="background:var(--ink);color:var(--accent-ink)">You</span>` : `<span class="av" style="background:${CP_HEX[m.cp]}">${m.n[0]}</span>`;
+  return `<div class="card member ${you?"you":""}">
+    <div class="who">${av}<div><div class="nm">${m.n}</div><div class="role">${m.r}${m.cp?" · "+m.cp+" clarity":""}</div></div></div>
+    <div class="drv" title="${dr.map(d=>d.n).join(", ")}">${dr.map(d=>`<i style="background:${d.hex}"></i>`).join("")}<span style="font-size:12px;color:var(--muted);margin-left:4px">${dr.map(d=>d.n.split(" / ")[0]).join(" + ")}</span></div>
+    <p class="pred">${m.p}</p></div>`;
+}
+$("to-team").onclick = ()=>{ renderTeam(); show("s-team"); };
+$("to-form").onclick = ()=>show("s-form");
+
+/* Opt in. Posts to Kartra when KARTRA_ACTION is set; otherwise shows the thank you and logs the payload for wiring. */
+function utm(){ try{ const p=new URLSearchParams(location.search); return ["utm_source","utm_medium","utm_campaign","utm_content"].map(k=>p.get(k)).filter(Boolean).join("|"); }catch(e){ return ""; } }
+$("optin").addEventListener("submit", async e=>{
+  e.preventDefault();
+  const name=$("fname").value.trim(), email=$("email").value.trim();
+  const err=$("ferr");
+  if(!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Add your first name and a working email so the report has somewhere to go."; err.hidden=false; return; }
+  err.hidden=true; $("submit").disabled=true; $("submit").textContent="Sending…";
+  const r = ranked();
+  const payload = { aaddress_url:"", [KARTRA_FIELDS.first_name]:name, [KARTRA_FIELDS.email]:email, [KARTRA_FIELDS.role]:$("role").value,
+    [KARTRA_FIELDS.drives]: r.slice(0,2).map(d=>d.n).join(" + ") + " | " + DRIVES.map(d=>d.k+":"+scores[d.k]).join(","),
+    [KARTRA_FIELDS.utm]: utm() };
+  if(KARTRA_ACTION){
+    try{ const fd=new FormData(); for(const k in payload) fd.append(k,payload[k]); await fetch(KARTRA_ACTION,{method:"POST",mode:"no-cors",body:fd}); }
+    catch(x){ console.warn("Kartra post failed", x); }
+  } else { console.log("Kartra not configured. Payload:", payload); }
+  try{ fbq("track","Lead",{content_name:"emotional-drives-demo"}); }catch(e){}
+  $("done-p").textContent = `Thanks ${name}. Your ${r[0].n.split(" / ")[0]} and ${r[1].n.split(" / ")[0]} report goes to ${email} in the next few minutes.`;
+  if(BOOKING_URL){ const u=new URL(BOOKING_URL); u.searchParams.set("name",name); u.searchParams.set("email",email); const ut=utm(); if(ut) u.searchParams.set("utm",ut); $("book").href=u.toString(); }
+  else { $("book").removeAttribute("href"); $("book").style.opacity=".5"; $("book-note").hidden=false; }
+  show("s-done");
+});
+
+/* Hot update: keep the viewer's place through a republish */
+const boot = d=>{ if(d && d.answers){ d.answers.forEach((a,i)=>answers[i]=new Set(a)); qi=d.qi||0; if(d.step && d.step!=="s-hero"){ if(d.step==="s-q"){renderQ(); show("s-q");} else { scores=score(); computeAndShow(); if(d.step!=="s-res"){ renderTeam(); show(d.step==="s-team"?"s-team":d.step); } } } } };
+window.claude?.hot?.snapshot?.(()=>({answers:answers.map(a=>[...a]), qi, step:steps.find(s=>!$(s).hidden)}));
+window.claude?.hot?.ready ? window.claude.hot.ready(boot) : boot(window.claude?.hot?.data ?? {});
+</script>
+
+</body>
+</html>

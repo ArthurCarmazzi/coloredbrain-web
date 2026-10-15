@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Colored Brain Client Magnet Masterclass</title>
+<meta name="description" content="Free 3 session masterclass for coaches, trainers and consultants: how the Colored Brain system keeps a team developing after you leave, and turns one workshop into a retainer. 30, 31 Oct and 3 Nov.">
+<meta property="og:title" content="Colored Brain Client Magnet Masterclass">
+<meta property="og:description" content="Free 3 session masterclass for coaches, trainers and consultants: how the Colored Brain system keeps a team developing after you leave, and turns one workshop into a retainer. 30, 31 Oct and 3 Nov.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Facebook Pixel (same id as coloredbrain.com/webinar) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','304613799943496');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=304613799943496&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: one long registration page in the CBCI editorial system (mono kickers, ink buttons, soft grey ground). Red is the single accent, used only on the CTA and the three session numerals. The 8 drive hues appear once, as data. */
+:root{
+  --bg:#F3F5F4; --surface:#FFFFFF; --ink:#12161C; --ink2:#3C4450; --muted:#6A7380;
+  --line:#DCE1E0; --tint:#E8ECEA; --accent:#12161C; --accent-ink:#FFFFFF;
+  --cta:#C8322B; --cta-ink:#FFFFFF; --hi:#FFE9A8;
+  --d1:#E0567B; --d2:#5B7FA6; --d3:#E8822E; --d4:#F0AD0E; --d5:#2FA05A; --d6:#1FA3A3; --d7:#8458C9; --d8:#3B82F6;
+  --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101316; --surface:#171B21; --ink:#EDEFF2; --ink2:#C3CAD4; --muted:#8B94A1;
+    --line:#2A3139; --tint:#1D232A; --accent:#EDEFF2; --accent-ink:#12161C;
+    --cta:#E04A42; --hi:#3A3113; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101316; --surface:#171B21; --ink:#EDEFF2; --ink2:#C3CAD4; --muted:#8B94A1;
+  --line:#2A3139; --tint:#1D232A; --accent:#EDEFF2; --accent-ink:#12161C;
+  --cta:#E04A42; --hi:#3A3113; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+section{padding-block:64px;border-top:1px solid var(--line)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;font-weight:500}
+.kicker::before{content:"";width:22px;height:2px;background:var(--ink);flex:none}
+.sec-head{display:flex;flex-direction:column;gap:14px;margin-bottom:36px;max-width:720px}
+.sec-head h2{font-size:clamp(28px,4.5vw,42px);font-weight:800;line-height:1.08}
+.sec-head p{color:var(--ink2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:600;font-size:16px;border-radius:999px;padding:14px 28px;border:1px solid var(--accent);cursor:pointer;text-decoration:none;background:var(--accent);color:var(--accent-ink);transition:transform .12s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid var(--d4);outline-offset:2px}
+.btn-cta{background:var(--cta);border-color:var(--cta);color:var(--cta-ink);font-size:17px;padding:16px 32px}
+.btn-ghost{background:transparent;color:var(--ink)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.mono-tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+/* Nav */
+nav{display:flex;align-items:center;gap:18px;padding-block:16px;flex-wrap:wrap;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;border-bottom:1px solid var(--line)}
+.logo{font-family:var(--display);font-weight:800;font-size:19px;display:flex;align-items:baseline;gap:9px;margin-right:auto;text-decoration:none}
+.logo em{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+nav a.nlink{text-decoration:none;font-size:14.5px;color:var(--ink2)}
+nav a.nlink:hover{color:var(--ink)}
+nav .btn{padding:9px 18px;font-size:14px}
+/* Hero */
+.hero{border-top:none;padding-block:40px 64px}
+.banner{display:inline-flex;flex-direction:column;gap:2px;background:var(--ink);color:var(--accent-ink);padding:10px 16px;border-radius:8px;font-size:13px;margin-bottom:28px}
+.banner b{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-size:clamp(36px,6vw,62px);font-weight:800;line-height:1.02;letter-spacing:-.01em;max-width:18ch}
+.hero h1 .hi{box-shadow:inset 0 -0.3em 0 var(--hi)}
+.hero-sub{color:var(--ink2);font-size:19px;max-width:62ch;margin-top:22px}
+.hero .cta{margin-top:30px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.trust{font-size:14px;color:var(--muted)}
+.ticks{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;font-size:14.5px;color:var(--ink2)}
+.ticks span::before{content:"✓";color:var(--d5);font-weight:700;margin-right:8px}
+.dates{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
+.date{padding:16px 18px;display:flex;flex-direction:column;gap:4px}
+.date .n{font-family:var(--display);font-weight:800;font-size:30px;color:var(--cta);line-height:1}
+.date .d{font-weight:600}
+.date .t{font-size:13.5px;color:var(--muted);font-family:var(--mono)}
+/* Problem */
+.pains{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pain{padding:20px 22px;font-size:15.5px;color:var(--ink2);display:flex;gap:12px;align-items:baseline}
+.pain::before{content:"→";font-family:var(--mono);color:var(--cta);flex:none}
+.truth{margin-top:28px;padding:24px 28px;background:var(--tint);border-radius:var(--r);font-size:17px}
+.truth b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:500}
+/* System */
+.layers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.layer{padding:24px;display:flex;flex-direction:column;gap:10px}
+.layer .num{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted)}
+.layer h3{font-size:20px;font-weight:700}
+.layer p{font-size:15px;color:var(--ink2)}
+.drives{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.drives i{width:14px;height:14px;border-radius:4px;display:block}
+.commercial{margin-top:24px;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+.commercial p{color:var(--ink2)}
+.shot{aspect-ratio:16/10;max-width:100%;border-radius:var(--r);border:1px dashed var(--line);background:var(--tint);display:grid;place-items:center;color:var(--muted);font-family:var(--mono);font-size:12px;text-align:center;padding:20px}
+/* Sessions */
+.sessions{display:flex;flex-direction:column;gap:14px}
+.session{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:28px}
+.session .when{display:flex;flex-direction:column;gap:6px}
+.session .num{font-family:var(--display);font-weight:800;font-size:44px;line-height:1;color:var(--cta)}
+.session .day{font-weight:600;font-size:15px}
+.session .time{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.session .body{display:flex;flex-direction:column;gap:10px;min-width:0}
+.session .body .mono-tag{color:var(--cta)}
+.session h3{font-size:22px;font-weight:700}
+.session p{color:var(--ink2);font-size:15.5px}
+.session .out{font-size:14.5px;padding-top:10px;border-top:1px solid var(--line)}
+.session .out b{font-weight:600;color:var(--ink)}
+/* Free + who */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.two>*{min-width:0}
+.free{padding:28px;display:flex;flex-direction:column;gap:14px}
+.free h3{font-size:22px;font-weight:700}
+.free ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;font-size:15px;color:var(--ink2)}
+.free li{display:flex;gap:9px;align-items:baseline}
+.free li::before{content:"✓";color:var(--d5);font-weight:700;flex:none}
+.free .price{font-size:14.5px;color:var(--muted)}
+.who{display:flex;flex-direction:column;gap:12px}
+.who .row{padding:16px 20px;display:flex;flex-direction:column;gap:4px}
+.who b{font-weight:600}
+.who span{font-size:14.5px;color:var(--ink2)}
+/* Proof */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{padding:22px;display:flex;flex-direction:column;gap:6px}
+.stat .v{font-family:var(--display);font-weight:800;font-size:34px;line-height:1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:13.5px;color:var(--muted)}
+.quote{margin-top:24px;padding:28px;display:flex;flex-direction:column;gap:14px;max-width:760px}
+.quote p{font-size:16px;color:var(--ink2)}
+.quote p::before{content:"\201C";font-family:var(--display);font-weight:800;color:var(--cta);font-size:28px;line-height:0;margin-right:4px;vertical-align:-6px}
+.quote .who2 b{display:block;font-size:14.5px}
+.quote .who2 span{font-size:13px;color:var(--muted)}
+.quote .after{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+/* FAQ */
+.faq{max-width:760px}
+.faq details{border-bottom:1px solid var(--line);padding-block:16px}
+.faq summary{font-weight:600;cursor:pointer;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--cta)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{color:var(--ink2);font-size:15px;margin-top:10px;max-width:64ch}
+/* Register */
+.register{padding-block:72px}
+.reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.reg-grid>*{min-width:0}
+.reg-grid h2{font-size:clamp(28px,4.5vw,40px);font-weight:800;line-height:1.08}
+.reg-grid p{color:var(--ink2);margin-top:14px}
+.regbox{padding:28px;display:flex;flex-direction:column;gap:14px}
+.regbox .kicker{color:var(--cta)}
+.regbox .kicker::before{background:var(--cta)}
+#wj-form{min-height:420px;border:0;width:100%;border-radius:10px;background:var(--surface)}
+.fallback{display:flex;flex-direction:column;gap:12px}
+.fallback .fine{font-size:13.5px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+@media (max-width:860px){
+  .pains,.two,.commercial,.reg-grid{grid-template-columns:1fr}
+  .layers,.dates{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .session{grid-template-columns:1fr;gap:12px}
+  .session .when{flex-direction:row;align-items:baseline;gap:14px;flex-wrap:wrap}
+  nav a.nlink{display:none}
+  section{padding-block:52px}
+}
+@media (prefers-reduced-motion: reduce){.btn{transition:none}html{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+<nav>
+  <a class="logo" href="/" target="_blank" rel="noopener">Colored Brain <em>Masterclass</em></a>
+  <a class="nlink" href="/#how" target="_blank" rel="noopener">How It Works</a>
+  <a class="nlink" href="/#teams" target="_blank" rel="noopener">For Teams</a>
+  <a class="nlink" href="/trainers" target="_blank" rel="noopener">For Trainers</a>
+  <a class="nlink" href="/pricing" target="_blank" rel="noopener">Pricing</a>
+  <a class="nlink" href="/#faq" target="_blank" rel="noopener">FAQ</a>
+  <a class="btn btn-ghost" href="/demo" target="_blank" rel="noopener">Try the Demo</a>
+  <a class="btn" href="#register">Claim My Seat</a>
+</nav>
+
+<header class="hero" id="top">
+  <div class="banner"><b>Your own CBCI assessment + Emotional Drive map included · free · $40 value</b><span>Run the prediction on yourself before you run it on anyone else.</span></div>
+  <div class="kicker">The Client Magnet Masterclass · free · 3 live sessions for coaches, trainers and consultants</div>
+  <h1 style="margin-top:18px">Clients don't hire the best trainer. <span class="hi">They hire the one whose results are still there six months later.</span></h1>
+  <p class="hero-sub">Most training ends the day you leave. Colored Brain keeps it running: your clients' people keep understanding themselves and each other, keep communicating better, keep growing as a team, with the system supporting them every week and you supporting the system. That is how a one time workshop becomes a retainer. Three free sessions show you how.</p>
+  <div class="cta">
+    <a class="btn btn-cta" href="#register">Claim my free seat + assessment</a>
+    <span class="trust">100% free · Your own CBCI assessment and Emotional Drive map included ($40 value) · 3 live sessions · 991 certified practitioners in 28 countries</span>
+  </div>
+  <div class="ticks"><span>No Colored Brain experience needed</span><span>Works with the tools you already sell</span><span>20 years of Directive Communication Psychology research</span></div>
+  <div class="dates">
+    <div class="card date"><span class="n">1</span><span class="d">Friday 30 October</span><span class="t">2:00 PM GMT+8 · live online</span></div>
+    <div class="card date"><span class="n">2</span><span class="d">Saturday 31 October</span><span class="t">2:00 PM GMT+8 · live online</span></div>
+    <div class="card date"><span class="n">3</span><span class="d">Tuesday 3 November</span><span class="t">7:00 PM GMT+8 · live online</span></div>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="sec-head">
+    <div class="kicker">What's left when you leave</div>
+    <h2>Every trainer gets results in the room. The question clients are really asking is what's left when you're gone.</h2>
+    <p>You know the pattern. The workshop lands, people are energised, and the moment you leave the building the old habits come back. Here is what that costs you:</p>
+  </div>
+  <div class="pains">
+    <div class="card pain">You run DISC, MBTI or StrengthsFinder. The room enjoys it. Three weeks later nobody can say what changed, and the leader cannot explain to their boss why they paid for it.</div>
+    <div class="card pain">A leader tells you someone is "resistant". You know it is a processing difference. But you cannot tell them what that person will do on Monday, so the leader goes back to guessing, and you go back to the brochure.</div>
+    <div class="card pain">Trust breaks over a deadline change, a reorg, a new manager. You hear about it after the damage. The trainer who could have seen it coming is the one they call next time.</div>
+    <div class="card pain">Reports are so long they go in a drawer. The team keeps behaving exactly as before.</div>
+    <div class="card pain">Prospects choose the consultant who "sounds" more specialised, because "people are different" is an observation. Everyone has observations. Nobody has forecasts.</div>
+    <div class="card pain">You get paid once for a day. The leader needs the change to last a year. Nothing in your toolkit stays behind to make that happen, so neither do you.</div>
+  </div>
+  <div class="truth"><b>The truth most people development professionals do not want to hear</b>Leaders pay for performance that lasts. A workshop gives them a good day. A system that keeps their people developing after you leave gives them a result they can show their boss, and gives you a reason to still be there next quarter.</div>
+</section>
+
+<section id="system">
+  <div class="sec-head">
+    <div class="kicker">The Colored Brain system now</div>
+    <h2>People are not difficult. They are predictable, once you have the right three inputs.</h2>
+    <p>Colored Brain never tried to explain everything about a person. It answered one usable question: how does this person get clear enough to act? That is still the foundation. The new system adds two layers on top.</p>
+  </div>
+  <div class="layers">
+    <div class="card layer"><span class="num">LAYER 1</span><h3>Clarity Process</h3><p>The CBCI identifies how each person processes information to reach clarity: Green, Red, Purple or Blue. This is where most trust breaks start, because leaders read a different clarity process as resistance, attitude or incompetence.</p><div class="drives"><i style="background:#2FA05A"></i><i style="background:#C8322B"></i><i style="background:#8458C9"></i><i style="background:#3B82F6"></i></div></div>
+    <div class="card layer"><span class="num">LAYER 2</span><h3>Emotional Drives</h3><p>The 8 Emotional Drives explain what each person is actually working for: Belonging, Security, Diversity, Recognition, Achievement, Growth, Excellence, Contribution. Starve someone's top drive and their behaviour changes, whatever their brain colour. The $10 Million Question maps them in two minutes.</p><div class="drives"><i style="background:var(--d1)"></i><i style="background:var(--d2)"></i><i style="background:var(--d3)"></i><i style="background:var(--d4)"></i><i style="background:var(--d5)"></i><i style="background:var(--d6)"></i><i style="background:var(--d7)"></i><i style="background:var(--d8)"></i></div></div>
+    <div class="card layer"><span class="num">LAYER 3</span><h3>AI Prediction</h3><p>The Predictive Psychology engine combines clarity process and drives for every member of a specific team and forecasts how each person will react to a given situation: a moved deadline, a new manager, a reorg. Not a type. A forecast for this team, this week.</p></div>
+  </div>
+  <div class="commercial">
+    <div><h3 style="font-size:22px;font-weight:700;margin-bottom:10px">What the retainer is built on</h3><p>Once a team is in the system, the dashboard keeps showing the leader where trust is forming and where it is about to break, the AI predicts how people will respond to what is coming, and the trainer is the person who turns that into action every month. That is not a workshop. That is a standing role. The certification includes 1,000 AI credits and the dashboard to run it.</p></div>
+    <div class="shot">Team prediction screenshot goes here<br>(from app.coloredbrain.com team dashboard)</div>
+  </div>
+</section>
+
+<section id="sessions">
+  <div class="sec-head">
+    <div class="kicker">The three sessions</div>
+    <h2>Three live sessions. You experience the system on yourself before you ever put a client in it.</h2>
+  </div>
+  <div class="sessions">
+    <div class="card session">
+      <div class="when"><span class="num">1</span><span class="day">Friday 30 October</span><span class="time">2:00 PM GMT+8</span></div>
+      <div class="body"><span class="mono-tag">The WHY</span><h3>Run the prediction on yourself first</h3><p>You will have your own CBCI result and Emotional Drive map before we start. In the session you see how your clarity process and your top two drives combine, then watch the engine predict your own reaction to a scenario every team faces. You will recognise it. That is the point.</p><p class="out"><b>Outcome:</b> belief that this is a forecast, not a label, because you felt it on yourself.</p></div>
+    </div>
+    <div class="card session">
+      <div class="when"><span class="num">2</span><span class="day">Saturday 31 October</span><span class="time">2:00 PM GMT+8</span></div>
+      <div class="body"><span class="mono-tag">The WHAT</span><h3>The debrief that turns one workshop into a standing relationship</h3><p>The exact debrief structure certified practitioners use to take a client from a single CBCI session to ongoing development, now with the drives layer. Three ways to work from one assessment: the 60 minute Trust Debrief, the Debrief plus Follow Up package, and the monthly Team Support retainer, where the dashboard and the AI keep the team developing and you keep the leader on track.</p><p class="out"><b>Outcome:</b> a clear picture of how a single assessment becomes repeat work and retainers, without a sales pitch.</p></div>
+    </div>
+    <div class="card session">
+      <div class="when"><span class="num">3</span><span class="day">Tuesday 3 November</span><span class="time">7:00 PM GMT+8</span></div>
+      <div class="body"><span class="mono-tag">The HOW</span><h3>From one debrief to a whole organisation</h3><p>How to take the system from individuals to full team workshops and organisational conversations using the team dashboard. Then your invitation to become a Certified Colored Brain Practitioner: self paced modules, weekly live sessions, 1,000 Predictive Psychology AI credits, and the Organization Intelligence dashboard you sell to clients.</p><p class="out"><b>Outcome:</b> a clear decision on certification, with the tools and language to facilitate from day one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="free">
+  <div class="two">
+    <div class="card free">
+      <div class="kicker">Free when you register</div>
+      <h3>Your full CBCI assessment and Emotional Drive map, before Session 1</h3>
+      <p style="color:var(--ink2);font-size:15.5px">This is not a preview. It is the same Colored Brain Communication Inventory certified practitioners use with paying clients, plus the Emotional Drives questionnaire. You will see:</p>
+      <ul>
+        <li>Your clarity process (Green, Red, Purple or Blue) and how you get clear enough to act</li>
+        <li>Your danger zones, where others most often misread you</li>
+        <li>Your top two Emotional Drives and what happens when they are starved</li>
+        <li>How the engine combines the two to predict your behaviour in a team</li>
+      </ul>
+      <p class="price">The assessment retails for $40. It is free when you claim your seat. Complete it the day you register so Session 1 is about you, not theory.</p>
+    </div>
+    <div class="who">
+      <div class="kicker" style="margin-bottom:6px">Who this masterclass is for</div>
+      <div class="card row"><b>Coaches and facilitators</b><span>Who want a framework clients still use a month later, not a label forgotten by Friday.</span></div>
+      <div class="card row"><b>Trainers and consultants</b><span>Who need a differentiator that is simple enough to teach and substantial enough to charge for.</span></div>
+      <div class="card row"><b>HR and L&amp;D leaders</b><span>Who are done with generic training that produces enthusiasm and no workplace change.</span></div>
+      <div class="card row"><b>Anyone who works with people</b><span>And wants to move from capable generalist to the person who can say what a team will do next.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="sec-head">
+    <div class="kicker">Proof</div>
+    <h2>Built on 20 years of Directive Communication Psychology</h2>
+  </div>
+  <div class="stats">
+    <div class="card stat"><span class="v">991</span><span class="l">certified practitioners</span></div>
+    <div class="card stat"><span class="v">28</span><span class="l">countries</span></div>
+    <div class="card stat"><span class="v">#1</span><span class="l">Global Gurus ranking, Organizational Culture, Arthur Carmazzi</span></div>
+    <div class="card stat"><span class="v">50%+</span><span class="l">practitioner margin on CBCI; one debrief covers the assessment cost</span></div>
+  </div>
+  <div class="card quote">
+    <p>The program was very much in line with conquering challenges in our day to day operation and your timing was excellent. People could really relate to your stories and exercises for cultivating a greater service attitude. Most of my people including myself had fun and got real value. The brain color exercise (CBCI) was excellent for really understanding our communication.</p>
+    <div class="who2"><b>Charles de Foucault</b><span>General Manager, The Ritz-Carlton, Seoul</span></div>
+    <p class="after" style="margin:0">Now with the prediction layer, the same exercise tells the team what happens next.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="sec-head"><div class="kicker">FAQ</div><h2>Questions trainers ask before they register</h2></div>
+  <div class="faq">
+    <details><summary>Is this just another personality test?</summary><p>No. Personality tests describe who someone is. Colored Brain measures how a person gets clarity and what drives them, then the AI predicts how they will behave inside a specific team. Your client cannot act on a label. They can act on a forecast.</p></details>
+    <details><summary>I already use DISC or MBTI. Why add this?</summary><p>Keep them. CBCI answers the question they cannot: what will this team do under this pressure? Most practitioners run it alongside their existing tools and use the prediction report as the consulting entry point.</p></details>
+    <details><summary>Do I need prior Colored Brain knowledge?</summary><p>No. You take your own assessment and drive map before Session 1, so every concept lands on your own data first.</p></details>
+    <details><summary>How does this become a paid offer?</summary><p>Session 2 walks through three offers built on one assessment: the 60 minute Trust Debrief, the Debrief plus Follow Up package, and the Team Prediction Report. You see how to position, price and deliver each.</p></details>
+    <details><summary>What does the certification include?</summary><p>Self paced online modules, weekly live sessions, the practitioner licence, 1,000 Predictive Psychology AI credits, and access to the Organization Intelligence dashboard you use with clients. The invitation and pricing come in Session 3.</p></details>
+    <details><summary>Is the masterclass really free?</summary><p>Yes. The three sessions and your personal CBCI assessment and drive map ($40 value) are free. The knowledge from Sessions 1 and 2 is yours whether or not you certify.</p></details>
+    <details><summary>What if I cannot attend live?</summary><p>Register anyway. Replays go to every registrant after each session. Live attendance is where the prediction demos happen, so come to at least one.</p></details>
+  </div>
+</section>
+
+<section class="register" id="register">
+  <div class="reg-grid">
+    <div>
+      <div class="kicker">Claim your seat</div>
+      <h2 style="margin-top:14px">Claim your free seat and your assessment</h2>
+      <p>Fill in your details. You will get your CBCI assessment link and the Emotional Drives questionnaire immediately, and the session links by email.</p>
+      <p><b>30 and 31 October, 3 November.</b> Live online, GMT+8.</p>
+      <p style="font-size:14px;color:var(--muted)">Seats are capped so the live prediction sessions stay workable. When the cohort fills, registration closes until the next one.</p>
+    </div>
+    <div class="card regbox">
+      <div class="kicker">Registration</div>
+      <!-- On coloredbrain.com this iframe renders the WebinarJam form in place. In a preview, embeds are blocked, so the button below takes over. -->
+      <iframe id="wj-form" title="Masterclass registration" src="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat" loading="lazy"></iframe>
+      <div class="fallback" id="fallback" hidden>
+        <a class="btn btn-cta" href="https://event.webinarjam.com/register/259/z4l2gaz2" target="_blank" rel="noopener">Claim my free seat</a>
+        <span class="fine">Registration opens on WebinarJam. Your assessment link arrives by email right after.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><span>Directive Communication Psychology · Colored Brain</span><span><a href="/">coloredbrain.com</a></span></footer>
+</div>
+
+<script>
+// If the WebinarJam embed is blocked (artifact preview) or fails to load, show the direct registration button instead.
+(function(){
+  const f=document.getElementById('wj-form'), fb=document.getElementById('fallback');
+  let loaded=false;
+  f.addEventListener('load',()=>{ loaded=true; fbq && fbq('track','ViewContent',{content_name:'masterclass-register'}); });
+  setTimeout(()=>{ if(!loaded){ f.hidden=true; fb.hidden=false; } },4000);
+  f.addEventListener('error',()=>{ f.hidden=true; fb.hidden=false; });
+})();
+</script>
+
+</body>
+</html>

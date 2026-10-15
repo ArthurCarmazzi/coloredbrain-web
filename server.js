@@ -1,5 +1,5 @@
 // Colored Brain website server (Express).
-// Serves the static pages in /public with clean URLs: /pricing, /trainers, /intro.
+// Serves the static pages in /public with clean URLs: /pricing, /trainers, /intro, /webinar, /demo.
 // Hostinger (or any Node host) runs: npm install && npm start. Port comes from PORT.
 
 const path = require("path");
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // Old .html links keep working but move to clean URLs: /pricing.html -> /pricing
-app.get(/^\/(index|pricing|trainers|intro)\.html$/, (req, res) => {
+app.get(/^\/(index|pricing|trainers|intro|webinar|demo)\.html$/, (req, res) => {
   const page = req.params[0] === "index" ? "" : req.params[0];
   const query = req.url.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
   res.redirect(301, `/${page}${query}`);
