@@ -19,7 +19,7 @@ Scale it to the task: a typo fix gets a one line sell check at most; a new featu
 
 ## Working style
 
-- When Arthur asks for something, just do it. Don't keep asking him to approve.
+- When Arthur asks for something, just do it. Don't keep asking him to approve. Feedback before execution (pushback, a better idea) is very welcome; give it, then proceed.
 - Arthur is not a developer: explain technical things in plain English.
 - Never use em or en dashes in text you write; use commas, colons or full stops.
 
