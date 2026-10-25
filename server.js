@@ -24,8 +24,19 @@ app.use((req, res, next) => {
   next();
 });
 
+// Trailing slashes (often added by WebinarJam, Kartra, email tools) go to the clean URL: /webinar-thanks/ -> /webinar-thanks
+app.use((req, res, next) => {
+  if (req.method === "GET" && req.path.length > 1 && req.path.endsWith("/")) {
+    const query = req.url.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
+    // Collapse leading slashes so "//evil.com/" can never become an off-site redirect
+    const clean = "/" + req.path.replace(/^\/+/, "").replace(/\/+$/, "");
+    return res.redirect(301, clean + query);
+  }
+  next();
+});
+
 // Old .html links keep working but move to clean URLs: /pricing.html -> /pricing
-app.get(/^\/(index|pricing|trainers|intro|webinar|demo)\.html$/, (req, res) => {
+app.get(/^\/(index|pricing|trainers|intro|webinar|demo|webinar-thanks|vip-welcome)\.html$/, (req, res) => {
   const page = req.params[0] === "index" ? "" : req.params[0];
   const query = req.url.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
   res.redirect(301, `/${page}${query}`);
