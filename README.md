@@ -8,6 +8,7 @@ Node.js (Express) server for the Colored Brain marketing site (app.coloredbrain.
 | `/pricing` | Buyers | Code packs and AI plans; every buy button goes to app.coloredbrain.com checkout |
 | `/trainers` | Coaches, trainers, consultants | The team-not-person premise, Predictive Psychology AI, client flow, three certification tiers, payback calculator |
 | `/webinar` | Coaches, trainers, consultants (paid ads) | Client Magnet Masterclass registration (23, 24 and 27 Nov 2026); WebinarJam form embedded, Kartra form "CBCI WEBINAR" is the demo's opt in |
+| `/webinar-thanks` | Masterclass registrants (hidden, noindex) | WebinarJam "thank you page" destination: fires Meta Lead + CompleteRegistration, pushes the free CBCI, add to calendar links for 23, 24 and 27 Nov |
 | `/demo` | Ad traffic, lead magnet | The $10 Million Question: 5 question Emotional Drives demo, drive map, sample team prediction, opt in to Kartra then WebinarJam |
 | `/intro` | Whop buyers (hidden) | Copy of the home page with a Special Introductory Offer banner, no Classic CBCI button, buy buttons pointing to Whop. Not linked from any menu, noindex; share the direct URL only |
 
