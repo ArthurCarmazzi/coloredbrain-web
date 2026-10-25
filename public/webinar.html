@@ -324,9 +324,9 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
     <div class="card regbox">
       <div class="kicker">Registration</div>
       <!-- On coloredbrain.com this iframe renders the WebinarJam form in place. In a preview, embeds are blocked, so the button below takes over. -->
-      <iframe id="wj-form" title="Masterclass registration" src="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat" loading="lazy"></iframe>
+      <iframe id="wj-form" title="Masterclass registration" src="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat"></iframe>
       <div class="fallback" id="fallback" hidden>
-        <a class="btn btn-cta" href="https://event.webinarjam.com/register/259/z4l2gaz2" target="_blank" rel="noopener">Claim my free seat</a>
+        <a class="btn btn-cta" href="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat" target="_blank" rel="noopener">Claim my free seat</a>
         <span class="fine">Registration opens on WebinarJam. Your assessment link arrives by email right after.</span>
       </div>
     </div>
@@ -342,7 +342,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
   const f=document.getElementById('wj-form'), fb=document.getElementById('fallback');
   let loaded=false;
   f.addEventListener('load',()=>{ loaded=true; fbq && fbq('track','ViewContent',{content_name:'masterclass-register'}); });
-  setTimeout(()=>{ if(!loaded){ f.hidden=true; fb.hidden=false; } },4000);
+  setTimeout(()=>{ if(!loaded){ f.hidden=true; fb.hidden=false; } },15000);
   f.addEventListener('error',()=>{ f.hidden=true; fb.hidden=false; });
 })();
 </script>
