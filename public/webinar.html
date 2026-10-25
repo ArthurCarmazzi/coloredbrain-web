@@ -157,7 +157,7 @@ nav .btn{padding:9px 18px;font-size:14px}
 .regbox{padding:28px;display:flex;flex-direction:column;gap:14px}
 .regbox .kicker{color:var(--cta)}
 .regbox .kicker::before{background:var(--cta)}
-#wj-form{min-height:420px;border:0;width:100%;border-radius:10px;background:var(--surface)}
+#wj-form{min-height:600px;border:0;width:100%;border-radius:10px;background:var(--surface)}
 .fallback{display:flex;flex-direction:column;gap:12px}
 .fallback .fine{font-size:13.5px;color:var(--muted)}
 footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
@@ -325,10 +325,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
       <div class="kicker">Registration</div>
       <!-- On coloredbrain.com this iframe renders the WebinarJam form in place. In a preview, embeds are blocked, so the button below takes over. -->
       <iframe id="wj-form" title="Masterclass registration" src="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat"></iframe>
-      <div class="fallback" id="fallback" hidden>
-        <a class="btn btn-cta" href="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat" target="_blank" rel="noopener">Claim my free seat</a>
-        <span class="fine">Registration opens on WebinarJam. Your assessment link arrives by email right after.</span>
-      </div>
+      <p class="fine" id="fallback" style="margin-top:10px;font-size:13px;color:var(--muted)">Form not showing? <a href="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat" target="_blank" rel="noopener">Open the registration form</a></p>
     </div>
   </div>
 </section>
@@ -337,14 +334,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
 </div>
 
 <script>
-// If the WebinarJam embed is blocked (artifact preview) or fails to load, show the direct registration button instead.
-(function(){
-  const f=document.getElementById('wj-form'), fb=document.getElementById('fallback');
-  let loaded=false;
-  f.addEventListener('load',()=>{ loaded=true; fbq && fbq('track','ViewContent',{content_name:'masterclass-register'}); });
-  setTimeout(()=>{ if(!loaded){ f.hidden=true; fb.hidden=false; } },15000);
-  f.addEventListener('error',()=>{ f.hidden=true; fb.hidden=false; });
-})();
+(function(){ const f=document.getElementById('wj-form'); f.addEventListener('load',()=>{ try{ fbq('track','ViewContent',{content_name:'masterclass-register'}); }catch(e){} }); })();
 </script>
 
 </body>
