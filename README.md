@@ -80,3 +80,16 @@ public/img/          logo, brain illustrations, book cover, trainer kit, seals
 ## Editing
 
 Edit the HTML directly. Sections are marked with `<!-- COMMENTS -->`. The Situation Simulator demo, billing toggle, mobile menu and payback calculator are small inline scripts at the bottom of each page.
+
+## Masterclass dashboard (private)
+
+`/admin/masterclass` shows live registrations from the WebinarJam API: real registrants (team, tests and throwaway emails filtered out), sign ups per day, target markets (Singapore, Malaysia, Gulf), utm sources, attendance per session and the full registrant list. It is password protected and never indexed.
+
+It needs two environment variables set in hPanel (Node.js app → Environment variables), never in this repo:
+
+| Variable | Value |
+|---|---|
+| `WJ_API_KEY` | WebinarJam API key (WebinarJam → My account → API) |
+| `DASH_PASSWORD` | Any strong password. Log in with any username plus this password |
+
+Optional: `WJ_WEBINAR_ID` (defaults to 259). Restart the app after adding them.

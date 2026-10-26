@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Masterclass Dashboard</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#F3F5F4; --surface:#FFFFFF; --ink:#12161C; --ink2:#3C4450; --muted:#6A7380; --line:#DCE1E0; --tint:#E8ECEA;
+  --bar:#12161C; --gold:#F0AD0E; --red:#C8322B; --ok:#2FA05A;
+  --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#101316; --surface:#171B21; --ink:#EDEFF2; --ink2:#C3CAD4; --muted:#8B94A1; --line:#2A3139; --tint:#1D232A; --bar:#EDEFF2; color-scheme:dark; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 60px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(24px,4vw,34px);margin:4px 0 0;line-height:1.05}
+.kick{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.meta{font-size:13px;color:var(--muted);text-align:right}
+button{font:inherit;font-weight:600;font-size:13px;border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
+.grid{display:grid;gap:14px;margin-top:18px}
+.kpis{grid-template-columns:repeat(5,1fr)}
+.two{grid-template-columns:1.4fr 1fr}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.kpi .v{font-family:var(--display);font-weight:800;font-size:34px;line-height:1.05;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:13px;color:var(--ink2);margin-top:2px}
+.kpi.hl{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.kpi.hl .l{color:var(--bg);opacity:.8}
+h2{font-family:var(--display);font-weight:800;font-size:18px;margin:0 0 12px}
+.bars{display:grid;gap:7px}
+.bar{display:grid;grid-template-columns:130px 1fr 42px;align-items:center;gap:10px;font-size:13.5px}
+.bar .t{height:12px;background:var(--tint);border-radius:6px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--bar);border-radius:6px}
+.bar .n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.cols{display:flex;align-items:flex-end;gap:4px;height:150px;padding-top:8px;border-bottom:1px solid var(--line)}
+.cols div{flex:1;min-width:4px;background:var(--bar);border-radius:3px 3px 0 0;position:relative}
+.cols div:hover::after{content:attr(data-tip);position:absolute;bottom:100%;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--ink);color:var(--bg);font-size:12px;padding:3px 7px;border-radius:6px;margin-bottom:4px}
+.axis{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:8px 8px;border-bottom:1px solid var(--line)}
+td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td.num{font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted)}
+.tag.real{border-color:var(--ok);color:var(--ok)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--tint);margin-right:3px;border:1px solid var(--line)}
+.dot.on{background:var(--ok);border-color:var(--ok)}
+.empty{color:var(--muted);font-size:14px;padding:6px 0}
+.note{font-size:13px;color:var(--ink2);background:var(--tint);border-radius:10px;padding:10px 12px;margin-top:12px}
+.warn{border-left:4px solid var(--red)}
+.tablewrap{overflow-x:auto}
+.toggle{font-size:13px;color:var(--ink2);display:flex;gap:6px;align-items:center}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div><div class="kick">Client Magnet Masterclass · live from WebinarJam</div><h1 id="title">Masterclass Dashboard</h1></div>
+  <div class="meta"><div id="updated">Loading…</div><button id="refresh" style="margin-top:6px">Refresh now</button></div>
+</header>
+
+<div id="err" class="note warn" hidden></div>
+
+<section class="grid kpis">
+  <div class="card kpi hl"><div class="v" id="k-real">–</div><div class="l">Real registrants</div></div>
+  <div class="card kpi"><div class="v" id="k-target">–</div><div class="l">From Singapore, Malaysia and the Gulf</div></div>
+  <div class="card kpi"><div class="v" id="k-7d">–</div><div class="l">Sign ups in the last 7 days</div></div>
+  <div class="card kpi"><div class="v" id="k-days">–</div><div class="l" id="k-days-l">Days to Session 1</div></div>
+  <div class="card kpi"><div class="v">–</div><div class="l">VIP upgrades ($15). Connects when Kartra API is added</div></div>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h2>Sign ups per day (last 30 days)</h2>
+    <div class="cols" id="daily"></div>
+    <div class="axis"><span id="ax-start"></span><span id="ax-end"></span></div>
+  </div>
+  <div class="card">
+    <h2>Target markets</h2>
+    <div class="bars" id="regions"></div>
+    <h2 style="margin-top:18px">Top countries</h2>
+    <div class="bars" id="countries"></div>
+  </div>
+</section>
+
+<section class="grid two">
+  <div class="card">
+    <h2>Sessions: registered vs attended</h2>
+    <div class="tablewrap"><table><thead><tr><th>Session</th><th>Registered</th><th>Attended live</th><th>Show up rate</th></tr></thead><tbody id="sessions"></tbody></table></div>
+  </div>
+  <div class="card">
+    <h2>Where sign ups come from</h2>
+    <div class="bars" id="sources"></div>
+    <div class="note">Sources come from the utm tags on your ad and email links. "No tracking tag" means the link had none, so add utm_source to every ad URL.</div>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><h2 style="margin:0">Registrants</h2><label class="toggle"><input type="checkbox" id="showall"> Show team, tests and throwaway emails (<span id="k-excl">0</span>)</label></div>
+    <div class="tablewrap"><table><thead><tr><th>Name</th><th>Email</th><th>Country</th><th>Signed up</th><th>Source</th><th>Sessions attended</th><th>Type</th></tr></thead><tbody id="people"></tbody></table></div>
+  </div>
+</section>
+</div>
+
+<script>
+let DATA=null;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function bars(el,obj,limit){
+  const e=Object.entries(obj).sort((a,b)=>b[1]-a[1]).slice(0,limit||8);
+  if(!e.length){ el.innerHTML='<div class="empty">No real registrants yet.</div>'; return; }
+  const max=Math.max(...e.map(x=>x[1]));
+  el.innerHTML=e.map(([k,v])=>`<div class="bar"><span>${esc(k)}</span><span class="t"><i style="width:${(v/max*100).toFixed(1)}%"></i></span><span class="n">${v}</span></div>`).join('');
+}
+function render(){
+  const d=DATA, showAll=$('showall').checked;
+  $('title').textContent=d.webinar;
+  $('updated').textContent='Updated '+new Date(d.updated).toLocaleString();
+  $('k-real').textContent=d.totals.realPeople;
+  $('k-excl').textContent=d.totals.excluded;
+  const tgt=['Singapore','Malaysia','Gulf'].reduce((s,k)=>s+(d.byRegion[k]||0),0);
+  $('k-target').textContent=tgt;
+  // last 7 / 30 days (dates are GMT+8 day keys)
+  const today=new Date(Date.now()+8*3600e3); const key=n=>new Date(today.getTime()-n*864e5).toISOString().slice(0,10);
+  let s7=0; for(let i=0;i<7;i++) s7+=d.byDay[key(i)]||0; $('k-7d').textContent=s7;
+  const days=[]; for(let i=29;i>=0;i--) days.push([key(i),d.byDay[key(i)]||0]);
+  const mx=Math.max(1,...days.map(x=>x[1]));
+  $('daily').innerHTML=days.map(([k,v])=>`<div style="height:${v?Math.max(4,v/mx*100):1}%;${v?'':'opacity:.25'}" data-tip="${k}: ${v}"></div>`).join('');
+  $('ax-start').textContent=days[0][0]; $('ax-end').textContent=days[29][0];
+  // countdown
+  const first=d.schedules[0]; if(first){ const t=new Date(first.date.replace(' ','T')+':00+08:00'); const n=Math.ceil((t-Date.now())/864e5); $('k-days').textContent=n>0?n:'Live'; $('k-days-l').textContent=n>0?'Days to Session 1 ('+first.label+')':'Session 1 has started'; }
+  bars($('regions'),Object.fromEntries(['Singapore','Malaysia','Gulf','Other'].map(k=>[k,d.byRegion[k]||0]).filter(x=>x[1]>0)));
+  bars($('countries'),d.byCountry,6);
+  bars($('sources'),d.bySource,8);
+  $('sessions').innerHTML=d.attendance.map(a=>`<tr><td>${esc(a.label)}</td><td class="num">${a.registered}</td><td class="num">${a.attended}</td><td class="num">${a.registered?Math.round(a.attended/a.registered*100)+'%':'–'}</td></tr>`).join('');
+  const list=d.people.filter(p=>showAll||p.kind==='real');
+  $('people').innerHTML=list.length?list.map(p=>`<tr><td>${esc(p.name)}</td><td>${esc(p.email)}</td><td>${esc(p.country)}</td><td>${esc(p.signup)}</td><td>${esc(p.source||'–')}</td><td>${d.schedules.map(s=>`<span class="dot ${p.sessions[s.id]&&p.sessions[s.id].attended?'on':''}" title="${esc(s.label)}"></span>`).join('')}</td><td><span class="tag ${p.kind}">${p.kind}</span></td></tr>`).join(''):'<tr><td colspan="7" class="empty">No real registrants yet. Tick the box above to see team and test sign ups.</td></tr>';
+}
+async function load(fresh){
+  $('updated').textContent='Loading…';
+  try{
+    const r=await fetch('/admin/masterclass/api'+(fresh?'?fresh=1':''),{credentials:'same-origin'});
+    const j=await r.json();
+    if(!r.ok) throw new Error(j.error||('HTTP '+r.status));
+    DATA=j; $('err').hidden=true; render();
+  }catch(e){ $('err').hidden=false; $('err').textContent='Could not load data: '+e.message; $('updated').textContent=''; }
+}
+$('refresh').onclick=()=>load(true);
+$('showall').onchange=()=>DATA&&render();
+load(false);
+setInterval(()=>load(false),5*60*1000);
+</script>
+</body>
+</html>

@@ -48,6 +48,9 @@ app.use("/intro", (req, res, next) => {
   next();
 });
 
+// Private masterclass dashboard (password protected; secrets come from environment variables)
+app.use("/admin/masterclass", require("./admin/masterclass"));
+
 // Health check for the host's monitoring
 app.get("/healthz", (req, res) => res.json({ ok: true }));
 
