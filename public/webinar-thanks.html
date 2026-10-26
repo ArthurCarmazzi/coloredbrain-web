@@ -11,8 +11,9 @@
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','304613799943496');fbq('track','PageView');
-fbq('track','Lead',{content_name:'client-magnet-masterclass',content_category:'webinar-registration'});
-fbq('track','CompleteRegistration',{content_name:'client-magnet-masterclass'});
+// Count each registration once: the /webinar page already fired Lead if the person registered there (same tab).
+var cbFired=false; try{ cbFired=sessionStorage.getItem('cb_lead_fired')==='1'; sessionStorage.removeItem('cb_lead_fired'); }catch(e){}
+if(!cbFired){ fbq('track','Lead',{content_name:'client-magnet-masterclass',content_category:'webinar-registration'}); fbq('track','CompleteRegistration',{content_name:'client-magnet-masterclass'}); }
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=304613799943496&ev=Lead&noscript=1"/></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">

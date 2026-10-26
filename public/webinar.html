@@ -334,7 +334,23 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
 </div>
 
 <script>
-(function(){ const f=document.getElementById('wj-form'); f.addEventListener('load',()=>{ try{ fbq('track','ViewContent',{content_name:'masterclass-register'}); }catch(e){} }); })();
+// WebinarJam's form talks to this page with postMessage: it asks us to resize it and, after a successful
+// registration, to redirect to the thank you page. Without this listener the click looks like it does nothing.
+(function(){
+  const f=document.getElementById('wj-form');
+  f.addEventListener('load',()=>{ try{ fbq('track','ViewContent',{content_name:'masterclass-register'}); }catch(e){} });
+  window.addEventListener('message',function(e){
+    if(e.origin!=='https://event.webinarjam.com') return;
+    const d=e.data||{};
+    if(d.func==='resize' && d.height){ f.style.height=Math.ceil(d.height)+'px'; f.style.minHeight='0'; }
+    if(d.func==='redirect' && typeof d.url==='string'){
+      let u; try{ u=new URL(d.url); }catch(err){ return; }
+      if(!/(^|\.)webinarjam\.com$|(^|\.)coloredbrain\.com$/.test(u.hostname)) return;
+      try{ fbq('track','Lead',{content_name:'client-magnet-masterclass'}); fbq('track','CompleteRegistration',{content_name:'client-magnet-masterclass'}); sessionStorage.setItem('cb_lead_fired','1'); }catch(err){}
+      setTimeout(function(){ window.location.href=u.href; },300);
+    }
+  });
+})();
 </script>
 
 </body>
