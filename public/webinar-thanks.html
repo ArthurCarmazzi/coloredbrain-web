@@ -108,7 +108,7 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-si
 </header>
 
 <section class="vip" id="vip">
-  <span class="kick">VIP upgrade · $15 · closes when Session 1 starts</span>
+  <span class="kick">VIP upgrade · $15 · only 12 VIP seats · closes when Session 1 starts</span>
   <h2>Most people leave a free masterclass with notes. VIPs leave with a client conversation already started.</h2>
   <p class="lead">Give your 2nd CBCI code to a real prospect before Session 1. Bring their results to the private VIP Zoom after the session and I'll debrief them live, so you watch your own prospect turn into a client conversation.</p>
 
@@ -126,7 +126,7 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-si
 
   <div class="buy">
     <a class="btn-vip" id="vipbtn" href="https://app.kartra.com/redirect_to/?asset=checkout&id=a5b9a0b2f91f747f0bb9906b364389be">Get VIP access for $15</a>
-    <span class="price">The 2nd CBCI code alone is <s>$40</s>. You pay $15 for everything.</span>
+    <span class="price">The 2nd CBCI code alone is <s>$40</s>. You pay $15 for everything. Capped at 12 VIPs so every one of you gets a hot seat.</span>
   </div>
 
   <div class="trust">
@@ -157,7 +157,7 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-si
     <h2>Lock the 3 sessions into your calendar</h2>
     <p>Live online. Your personal join link is in your confirmation email.</p>
     <div class="sessions" id="sessions"></div>
-    <p class="fine">Session 3 starts later than the first two. Replays go to every registrant, but the live prediction demos only happen live.</p>
+    <p class="fine">Sessions 1 and 2 run 60 minutes. Session 3 runs 75 and starts later than the first two. Replays go to every registrant, but the live prediction demos only happen live.</p>
   </div>
 </div>
 
@@ -177,9 +177,9 @@ document.getElementById('vipbtn').addEventListener('click',()=>{ try{ fbq('track
 // Sessions in UTC (GMT+8 minus 8h). Shows each time in Bali/SG/KL time plus the visitor's own local time, with Google Calendar links.
 (function(){
   const S=[
-    {n:1,title:"The WHY: why trust breaks",start:"2026-11-23T06:00:00Z",mins:90},
+    {n:1,title:"The WHY: why trust breaks",start:"2026-11-23T06:00:00Z",mins:60},
     {n:2,title:"The WHAT: the debrief that becomes a paid offer",start:"2026-11-24T06:00:00Z",mins:60},
-    {n:3,title:"The HOW: the workshop path",start:"2026-11-27T11:00:00Z",mins:60}
+    {n:3,title:"The HOW: the workshop path",start:"2026-11-27T11:00:00Z",mins:75}
   ];
   const box=document.getElementById('sessions');
   const gmt8=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Singapore',weekday:'long',day:'numeric',month:'long',hour:'numeric',minute:'2-digit',hour12:true});
