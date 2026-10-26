@@ -66,7 +66,7 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-si
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .vip{background:var(--ink);color:#fff;border-radius:var(--r);padding:30px 28px;margin-top:28px}
 .vip .kick{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#F0AD0E;font-weight:500}
-.vip h2{color:#fff;font-size:clamp(26px,4vw,34px);margin:10px 0 6px;line-height:1.1}
+.vip h2{color:#fff;font-size:clamp(24px,3.6vw,32px);margin:10px 0 6px;line-height:1.1}
 .vip .lead{color:#C3CAD4}
 .perks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 24px}
 .perk{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px}
@@ -77,6 +77,20 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-si
 .btn-vip:hover{transform:translateY(-1px)}
 .price{color:#C3CAD4;font-size:15px}
 .price s{opacity:.7}
+.hero-perk{background:rgba(240,173,14,.12);border:1px solid rgba(240,173,14,.45);border-radius:12px;padding:18px 18px 16px;margin-top:20px}
+.hero-perk b{display:block;font-family:var(--display);font-size:20px;color:#F0AD0E;margin-bottom:4px}
+.hero-perk span{color:#E3E7EC;font-size:15.5px}
+.trust{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.trust>div{font-size:15px;color:#C3CAD4;border-top:1px solid rgba(255,255,255,.14);padding-top:12px}
+.trust b{color:#fff}
+.sig{font-family:var(--display);font-weight:800;color:#F0AD0E;margin-left:4px}
+.proof{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
+.pq{font-size:16px;color:#fff;font-style:italic;line-height:1.45}
+.pq span{display:block;font-style:normal;font-size:13px;color:#9AA3AF;margin-top:8px}
+.pstats{display:grid;gap:12px}
+.pstats b{font-family:var(--display);font-size:28px;color:#F0AD0E;display:block;line-height:1}
+.pstats span{font-size:13.5px;color:#C3CAD4}
+@media (max-width:620px){.trust,.proof{grid-template-columns:1fr}}
 .steps-h{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:40px 0 0;font-weight:500}
 @media (max-width:620px){.perks{grid-template-columns:1fr}.vip{padding:24px 20px}}
 
@@ -94,18 +108,35 @@ footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);font-si
 </header>
 
 <section class="vip" id="vip">
-  <span class="kick">VIP upgrade · $15</span>
-  <h2>Want to land your first paid debrief faster?</h2>
-  <p class="lead">For just $15, go beyond the free masterclass with hands on support, extra practice reps, and insider access to make your first paid CBCI debrief happen fast.</p>
-  <div class="perks">
-    <div class="perk"><b>A 2nd CBCI code</b><span>Use it on a real prospect and turn a conversation into a client. This alone retails for $40.</span></div>
-    <div class="perk"><b>Private WhatsApp circle</b><span>5 days of live group access plus 30 days of ongoing support to ask questions and get feedback.</span></div>
-    <div class="perk"><b>Hot seat priority + VIP rooms</b><span>Jump the line for live coaching and get into the VIP only breakout rooms during the masterclass.</span></div>
-    <div class="perk"><b>The Debrief Script Pack</b><span>Word for word scripts to run your first paid CBCI debrief with total confidence.</span></div>
+  <span class="kick">VIP upgrade · $15 · closes when Session 1 starts</span>
+  <h2>Most people leave a free masterclass with notes. VIPs leave with a client conversation already started.</h2>
+  <p class="lead">Give your 2nd CBCI code to a real prospect before Session 1. Bring their results to the VIP room, and Arthur debriefs them live, so you watch your own prospect turn into a client conversation.</p>
+
+  <div class="hero-perk">
+    <b>Live hot seat: Arthur debriefs YOUR prospect</b>
+    <span>Jump the line for live coaching and get into the VIP only breakout rooms during the masterclass. This is the part no replay can give you.</span>
   </div>
+
+  <div class="perks">
+    <div class="perk"><b>A 2nd CBCI code</b><span>For that real prospect. This alone retails for $40.</span></div>
+    <div class="perk"><b>Private WhatsApp circle with Arthur</b><span>5 days of live group access plus 30 days of support after. Your VIP items are delivered here.</span></div>
+    <div class="perk"><b>The VIP Debrief Script Pack</b><span>Leader, coach, team and couple versions, plus the objection handling. Word for word, ready for your first paid debrief.</span></div>
+    <div class="perk"><b>$15 credited to your Trainer certification</b><span>If you enroll after the masterclass, your $15 comes off the price. It's a deposit, not a cost.</span></div>
+  </div>
+
   <div class="buy">
     <a class="btn-vip" id="vipbtn" href="https://app.kartra.com/redirect_to/?asset=checkout&id=a5b9a0b2f91f747f0bb9906b364389be">Get VIP access for $15</a>
     <span class="price">The 2nd CBCI code alone is <s>$40</s>. You pay $15 for everything.</span>
+  </div>
+
+  <div class="trust">
+    <div class="guar"><b>Zero risk.</b> If Session 1 doesn't give you one insight you can use with a client, message Arthur in the group and get your $15 back.</div>
+    <div class="why"><b>Why only $15?</b> Because I want you practicing on a real prospect, not just watching. <span class="sig">Arthur</span></div>
+  </div>
+
+  <div class="proof">
+    <div class="pq">"The brain color exercise (CBCI) was excellent for really understanding our communication."<span>Charles de Foucault, General Manager, The Ritz-Carlton, Seoul</span></div>
+    <div class="pstats"><div><b>1</b><span>mini session became a contract with Singapore's public health system</span></div><div><b>991</b><span>certified professionals in 28 countries</span></div></div>
   </div>
 </section>
 
