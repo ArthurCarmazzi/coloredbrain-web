@@ -296,7 +296,7 @@ $("opts").addEventListener("click",e=>{
   b.setAttribute("aria-pressed", answers[qi].has(i));
   $("next").disabled = answers[qi].size===0;
 });
-$("start").onclick = ()=>{ qi=0; renderQ(); show("s-q"); };
+$("start").onclick = ()=>{ try{ fbq("track","ViewContent",{content_name:"emotional-drives-demo-start"}); }catch(e){} qi=0; renderQ(); show("s-q"); };
 $("back").onclick = ()=>{ if(qi>0){qi--; renderQ();} };
 $("next").onclick = ()=>{ if(qi<QUESTIONS.length-1){qi++; renderQ();} else { computeAndShow(); } };
 
