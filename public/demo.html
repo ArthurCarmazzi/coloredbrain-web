@@ -211,7 +211,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-si
 <script>
 /* ===== Config: Kartra form post. Set KARTRA_ACTION to the form's action URL from Kartra (Forms > your form > embed code). Field names below must match the Kartra form fields. ===== */
 const KARTRA_ACTION = "https://app.kartra.com/process/add_lead/9KCyRokbYfXc"; // Kartra form "CBCI WEBINAR" (id 396, double opt in)
-const BOOKING_URL = "https://event.webinarjam.com/register/259/z4l2gaz2";  // WebinarJam registration for the Client-Magnet Masterclass (name and email are prefilled)
+const BOOKING_URL = "/webinar";  // Our own registration page, which carries the WebinarJam embed. The bare WebinarJam link (event.webinarjam.com/register/259/z4l2gaz2) redirects to arthur.kartra.com/page/Qsu1326, which redirects back to it: an infinite loop. Do not use it until that WebinarJam registration-page setting is cleared.
 const KARTRA_FIELDS = { first_name:"first_name", email:"email", role:"custom_role", drives:"custom_drives", utm:"custom_utm" };
 
 const DRIVES = [
@@ -402,7 +402,7 @@ $("optin").addEventListener("submit", async e=>{
   } else { console.log("Kartra not configured. Payload:", payload); }
   try{ fbq("track","Lead",{content_name:"emotional-drives-demo"}); }catch(e){}
   $("done-p").textContent = `Thanks ${name}. Your ${r[0].n.split(" / ")[0]} and ${r[1].n.split(" / ")[0]} report goes to ${email} in the next few minutes.`;
-  if(BOOKING_URL){ const u=new URL(BOOKING_URL); u.searchParams.set("name",name); u.searchParams.set("email",email); const ut=utm(); if(ut) u.searchParams.set("utm",ut); $("book").href=u.toString(); }
+  if(BOOKING_URL){ const u=new URL(BOOKING_URL, location.origin); u.searchParams.set("name",name); u.searchParams.set("email",email); const ut=utm(); if(ut) u.searchParams.set("utm",ut); $("book").href=u.toString(); }
   else { $("book").removeAttribute("href"); $("book").style.opacity=".5"; $("book-note").hidden=false; }
   show("s-done");
 });
