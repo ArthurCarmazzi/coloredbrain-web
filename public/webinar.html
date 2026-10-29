@@ -384,6 +384,7 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
       let u; try{ u=new URL(d.url); }catch(err){ return; }
       if(!/(^|\.)webinarjam\.com$|(^|\.)coloredbrain\.com$/.test(u.hostname)) return;
       try{ fbq('track','Lead',{content_name:'client-magnet-masterclass'}); fbq('track','CompleteRegistration',{content_name:'client-magnet-masterclass'}); sessionStorage.setItem('cb_lead_fired','1'); }catch(err){}
+      try{ window.lintrk('track',{conversion_id:31650050}); }catch(err){}
       setTimeout(function(){ window.location.href=u.href; },300);
     }
   });
