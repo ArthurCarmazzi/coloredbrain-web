@@ -17,7 +17,7 @@
 fbq('init','304613799943496');fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=304613799943496&ev=PageView&noscript=1"/></noscript>
-<!-- LinkedIn Insight Tag -->
+<!-- LinkedIn Insight Tag (partner ID 9950506). PageView here; the webinar registration conversion fires in the WebinarJam listener at the bottom. -->
 <script type="text/javascript">
 _linkedin_partner_id = "9950506";
 window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
@@ -384,7 +384,8 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
       let u; try{ u=new URL(d.url); }catch(err){ return; }
       if(!/(^|\.)webinarjam\.com$|(^|\.)coloredbrain\.com$/.test(u.hostname)) return;
       try{ fbq('track','Lead',{content_name:'client-magnet-masterclass'}); fbq('track','CompleteRegistration',{content_name:'client-magnet-masterclass'}); sessionStorage.setItem('cb_lead_fired','1'); }catch(err){}
-      try{ window.lintrk('track',{conversion_id:31650050}); }catch(err){}
+      // LinkedIn: "webinar registration" conversion (Campaign Manager conversion ID 31650050, confirmed against the conversion's own code snippet in LinkedIn Campaign Manager on 2026-10-29)
+      try{ window.lintrk && window.lintrk('track', { conversion_id: 31650050 }); }catch(err){}
       setTimeout(function(){ window.location.href=u.href; },300);
     }
   });
