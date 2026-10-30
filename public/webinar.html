@@ -90,41 +90,50 @@ nav{display:flex;align-items:center;gap:18px;padding-block:16px;flex-wrap:wrap;p
 nav a.nlink{text-decoration:none;font-size:14.5px;color:var(--ink2)}
 nav a.nlink:hover{color:var(--ink)}
 nav .btn{padding:9px 18px;font-size:14px}
-/* Hero */
-.hero{border-top:none;padding-block:40px 64px}
-.banner{display:inline-flex;flex-direction:column;gap:2px;background:var(--ink);color:var(--accent-ink);padding:10px 16px;border-radius:8px;font-size:13px;margin-bottom:28px}
+/* Hero: copy on the left, registration form on the right, so the form is on the first screen instead of the twelfth */
+.hero{border-top:none;padding-block:32px 56px}
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:start}
+.hero-grid>*{min-width:0}
+.banner{display:inline-flex;flex-direction:column;gap:2px;background:var(--ink);color:var(--accent-ink);padding:10px 16px;border-radius:8px;font-size:13px;margin-bottom:22px}
 .banner b{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
-.hero h1{font-size:clamp(36px,6vw,62px);font-weight:800;line-height:1.02;letter-spacing:-.01em;max-width:18ch}
+.hero h1{font-size:clamp(34px,4.6vw,54px);font-weight:800;line-height:1.02;letter-spacing:-.01em;max-width:18ch}
 .hero h1 .hi{box-shadow:inset 0 -0.3em 0 var(--hi)}
-.hero-sub{color:var(--ink2);font-size:19px;max-width:62ch;margin-top:22px}
-.hero .cta{margin-top:30px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.hero-sub{color:var(--ink2);font-size:18px;max-width:58ch;margin-top:18px}
+.hero .cta{margin-top:22px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .trust{font-size:14px;color:var(--muted)}
-.ticks{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;font-size:14.5px;color:var(--ink2)}
+.ticks{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:22px;font-size:14px;color:var(--ink2)}
 .ticks span::before{content:"✓";color:var(--d5);font-weight:700;margin-right:8px}
-.dates{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
-.date{padding:16px 18px;display:flex;flex-direction:column;gap:4px}
-.date .n{font-family:var(--display);font-weight:800;font-size:30px;color:var(--cta);line-height:1}
-.date .d{font-weight:600}
-.date .t{font-size:13.5px;color:var(--muted);font-family:var(--mono)}
+/* Who's teaching: photo plus one line of earned authority, in the hero where a cold visitor asks "who is this?" */
+.host{display:flex;gap:16px;align-items:center;margin-top:24px;padding:14px 16px 14px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.host img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:var(--tint);flex:none}
+.host .hname{font-family:var(--display);font-weight:800;font-size:17px;line-height:1.1}
+.host .hline{font-size:13.5px;color:var(--ink2);margin-top:4px;line-height:1.4}
+.host .hline b{color:var(--ink);font-weight:600}
+/* Dates: three compact rows, three time zones, in the hero rather than screen twelve */
+.dates{display:flex;flex-direction:column;gap:8px;margin-top:22px}
+.date{padding:12px 14px;display:grid;grid-template-columns:34px 1fr;gap:4px 12px;align-items:center}
+.date .n{font-family:var(--display);font-weight:800;font-size:24px;color:var(--cta);line-height:1;grid-row:span 3}
+.date .d{font-weight:600;font-size:15px}
+.date .t{font-size:13px;color:var(--ink2);font-family:var(--mono)}
+.date .tz{font-size:12.5px;color:var(--muted)}
 .date .lt{display:block;font-size:12.5px;color:var(--ink2);margin-top:2px}
 .date .lt:empty{display:none}
+/* The form, now in the hero */
+.hero-form{position:sticky;top:84px}
+.regbox{padding:22px;display:flex;flex-direction:column;gap:10px}
+.regbox .kicker{color:var(--cta)}
+.regbox .kicker::before{background:var(--cta)}
+.regbox h2{font-size:22px;font-weight:800;line-height:1.1}
+.regbox .lead{font-size:14.5px;color:var(--ink2)}
+#wj-form{min-height:520px;border:0;width:100%;border-radius:10px;background:var(--surface)}
+/* Sticky mobile CTA bar: one tap from the form wherever you are on the page */
+.stickybar{display:none}
 /* Problem */
 .pains{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .pain{padding:20px 22px;font-size:15.5px;color:var(--ink2);display:flex;gap:12px;align-items:baseline}
 .pain::before{content:"→";font-family:var(--mono);color:var(--cta);flex:none}
 .truth{margin-top:28px;padding:24px 28px;background:var(--tint);border-radius:var(--r);font-size:17px}
 .truth b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:500}
-/* System */
-.layers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.layer{padding:24px;display:flex;flex-direction:column;gap:10px}
-.layer .num{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--muted)}
-.layer h3{font-size:20px;font-weight:700}
-.layer p{font-size:15px;color:var(--ink2)}
-.drives{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
-.drives i{width:14px;height:14px;border-radius:4px;display:block}
-.commercial{margin-top:24px;display:grid;grid-template-columns:1fr;gap:24px;align-items:center;max-width:720px}
-.commercial p{color:var(--ink2)}
-.shot{aspect-ratio:16/10;max-width:100%;border-radius:var(--r);border:1px dashed var(--line);background:var(--tint);display:grid;place-items:center;color:var(--muted);font-family:var(--mono);font-size:12px;text-align:center;padding:20px}
 /* Sessions */
 .sessions{display:flex;flex-direction:column;gap:14px}
 .session{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:28px}
@@ -169,27 +178,34 @@ nav .btn{padding:9px 18px;font-size:14px}
 .faq summary::after{content:"+";font-family:var(--mono);color:var(--cta)}
 .faq details[open] summary::after{content:"−"}
 .faq details p{color:var(--ink2);font-size:15px;margin-top:10px;max-width:64ch}
-/* Register */
-.register{padding-block:72px}
-.reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
-.reg-grid>*{min-width:0}
-.reg-grid h2{font-size:clamp(28px,4.5vw,40px);font-weight:800;line-height:1.08}
-.reg-grid p{color:var(--ink2);margin-top:14px}
-.regbox{padding:28px;display:flex;flex-direction:column;gap:14px}
-.regbox .kicker{color:var(--cta)}
-.regbox .kicker::before{background:var(--cta)}
-#wj-form{min-height:600px;border:0;width:100%;border-radius:10px;background:var(--surface)}
-.fallback{display:flex;flex-direction:column;gap:12px}
-.fallback .fine{font-size:13.5px;color:var(--muted)}
+/* Closing CTA: for the readers who went through everything, a short restatement that jumps back to the form */
+.closing{padding-block:64px;text-align:center}
+.closing h2{font-size:clamp(28px,4.5vw,40px);font-weight:800;line-height:1.08;max-width:22ch;margin-inline:auto}
+.closing p{color:var(--ink2);margin-top:14px;max-width:56ch;margin-inline:auto}
+.closing .btn{margin-top:26px}
+.closing .fine{font-size:14px;color:var(--muted);margin-top:14px}
 footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
 @media (max-width:860px){
-  .pains,.two,.commercial,.reg-grid{grid-template-columns:1fr}
-  .layers,.dates{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-form{position:static}
+  .pains,.two{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}
   .session{grid-template-columns:1fr;gap:12px}
   .session .when{flex-direction:row;align-items:baseline;gap:14px;flex-wrap:wrap}
-  nav a.nlink{display:none}
+  nav a.nlink,nav .btn.navcta{display:none}
   section{padding-block:52px}
+  /* On a phone the headline sub and ticks move below the form so the form lands on screen two, not screen twelve */
+  .hero .cta{display:none}
+  .hero-copy{display:contents}
+  .hero-copy .banner{order:1}.hero-copy .kicker{order:2}.hero-copy h1{order:3}.hero-copy .hero-sub{order:4}
+  .hero-form{order:5}
+  .hero-copy .host{order:6}.hero-copy .dates{order:7}.hero-copy .ticks{order:8}
+  body{padding-bottom:84px}
+  .stickybar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px max(16px,env(safe-area-inset-right,0px)) max(10px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:var(--bg);border-top:1px solid var(--line);gap:12px;align-items:center;justify-content:space-between;transition:transform .2s ease}
+  .stickybar.hide{transform:translateY(110%)}
+  .stickybar .sb-text{font-size:13px;color:var(--ink2);line-height:1.25;min-width:0}
+  .stickybar .sb-text b{display:block;color:var(--ink);font-weight:600}
+  .stickybar .btn{flex:none;padding:12px 20px;font-size:15px}
 }
 @media (prefers-reduced-motion: reduce){.btn{transition:none}html{scroll-behavior:auto}}
 </style>
@@ -203,23 +219,45 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
   <a class="nlink" href="/pricing" target="_blank" rel="noopener">Pricing</a>
   <a class="nlink" href="/#faq" target="_blank" rel="noopener">FAQ</a>
   <a class="btn btn-ghost" href="/demo" target="_blank" rel="noopener">Try the Demo</a>
-  <a class="btn" href="#register">Claim My Seat</a>
+  <a class="btn navcta" href="#register">Claim My Seat</a>
 </nav>
 
 <header class="hero" id="top">
-  <div class="banner"><b>Your own CBCI assessment + Emotional Drive map included · free · $40 value</b><span>Run the prediction on yourself before you run it on anyone else.</span></div>
-  <div class="kicker">The Client Magnet Masterclass · free · 3 live sessions for coaches, trainers and consultants</div>
-  <h1 style="margin-top:18px">Clients don't hire the best trainer. <span class="hi">They hire the one whose results are still there six months later.</span></h1>
-  <p class="hero-sub">Most training ends the day you leave. Colored Brain keeps your clients' people developing every week after you've gone, which is how a one time workshop becomes a retainer. Three free sessions show you how.</p>
-  <div class="cta">
-    <a class="btn btn-cta" href="#register">Claim my free seat + assessment</a>
-    <span class="trust">100% free · Your own CBCI assessment and Emotional Drive map included ($40 value) · 3 live sessions · 991 certified trainers and practitioners in 28 countries</span>
-  </div>
-  <div class="ticks"><span>No Colored Brain experience needed</span><span>Works with the tools you already sell</span><span>20 years of Directive Communication Psychology research</span></div>
-  <div class="dates">
-    <div class="card date"><span class="n">1</span><span class="d">Monday 23 November</span><span class="t">2:00 PM GMT+8 · 60 min · live</span><span class="lt" data-utc="2026-11-23T06:00:00Z"></span></div>
-    <div class="card date"><span class="n">2</span><span class="d">Tuesday 24 November</span><span class="t">2:00 PM GMT+8 · 60 min · live</span><span class="lt" data-utc="2026-11-24T06:00:00Z"></span></div>
-    <div class="card date"><span class="n">3</span><span class="d">Friday 27 November</span><span class="t">7:00 PM GMT+8 · 75 min · live</span><span class="lt" data-utc="2026-11-27T11:00:00Z"></span></div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="banner"><b>Your own CBCI assessment + Emotional Drive map included · free · $40 value</b><span>Run the prediction on yourself before you run it on anyone else.</span></div>
+      <div class="kicker">Free · 3 live sessions · 23, 24 and 27 November</div>
+      <h1 style="margin-top:16px">Clients don't hire the best trainer. <span class="hi">They hire the one whose results are still there six months later.</span></h1>
+      <p class="hero-sub">Most training ends the day you leave. Colored Brain keeps your clients' people developing every week after you've gone, which is how a one time workshop becomes a retainer. Three free sessions for coaches, trainers and consultants show you how.</p>
+      <div class="cta">
+        <a class="btn btn-cta" href="#register">Claim my free seat + assessment</a>
+        <span class="trust">100% free · Your own CBCI assessment and Emotional Drive map included ($40 value)</span>
+      </div>
+      <div class="host">
+        <img src="/img/arthur-hero.webp" alt="Arthur Carmazzi" width="84" height="84" loading="eager">
+        <div>
+          <div class="hname">Taught live by Arthur Carmazzi</div>
+          <div class="hline">Ranked <b>#1 worldwide in Organizational Culture</b> by Global Gurus · founder of Directive Communication Psychology · <b>991 certified practitioners in 28 countries</b> · 16 books</div>
+        </div>
+      </div>
+      <div class="dates">
+        <div class="card date"><span class="n">1</span><span class="d">Monday 23 November · 60 min</span><span class="t">2:00 PM Singapore time</span><span class="tz">10:00 AM Dubai · 9:00 AM Riyadh</span><span class="lt" data-utc="2026-11-23T06:00:00Z"></span></div>
+        <div class="card date"><span class="n">2</span><span class="d">Tuesday 24 November · 60 min</span><span class="t">2:00 PM Singapore time</span><span class="tz">10:00 AM Dubai · 9:00 AM Riyadh</span><span class="lt" data-utc="2026-11-24T06:00:00Z"></span></div>
+        <div class="card date"><span class="n">3</span><span class="d">Friday 27 November · 75 min</span><span class="t">7:00 PM Singapore time</span><span class="tz">3:00 PM Dubai · 2:00 PM Riyadh</span><span class="lt" data-utc="2026-11-27T11:00:00Z"></span></div>
+      </div>
+      <div class="ticks"><span>No Colored Brain experience needed</span><span>Works with the tools you already sell</span><span>Replays sent to every registrant</span></div>
+    </div>
+    <div class="hero-form" id="register">
+      <div class="card regbox">
+        <div class="kicker">Claim your free seat</div>
+        <h2>Your seat and your assessment, free</h2>
+        <p class="lead">Register and your CBCI assessment link lands in your inbox today. Session links follow by email.</p>
+        <!-- On coloredbrain.com this iframe renders the WebinarJam form in place. In a preview, embeds are blocked, so the link below takes over. -->
+        <iframe id="wj-form" title="Masterclass registration" src="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat"></iframe>
+        <p class="fine" id="fallback" style="font-size:13px;color:var(--muted)">Form not showing? <a href="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat" target="_blank" rel="noopener">Open the registration form</a></p>
+        <p class="fine" style="font-size:13px;color:var(--muted)">Live prediction demos work best in a small room, so register now and you are in this cohort, not the next one.</p>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -240,22 +278,6 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
   <div class="truth"><b>The truth most people development professionals do not want to hear</b>Leaders pay for performance that lasts. A workshop gives them a good day. A system that keeps their people developing after you leave gives them a result they can show their boss, and gives you a reason to still be there next quarter.</div>
 </section>
 
-<section id="system">
-  <div class="sec-head">
-    <div class="kicker">The Colored Brain system now</div>
-    <h2>People are not difficult. They are predictable, once you have the right three inputs.</h2>
-    <p>Colored Brain never tried to explain everything about a person. It answered one usable question: how does this person get clear enough to act? That is still the foundation. The new system adds two layers on top.</p>
-  </div>
-  <div class="layers">
-    <div class="card layer"><span class="num">LAYER 1</span><h3>Clarity Process</h3><p>The CBCI identifies how each person processes information to reach clarity: Green, Red, Purple or Blue. This is where most trust breaks start, because leaders read a different clarity process as resistance, attitude or incompetence.</p><div class="drives"><i style="background:#2FA05A"></i><i style="background:#C8322B"></i><i style="background:#8458C9"></i><i style="background:#3B82F6"></i></div></div>
-    <div class="card layer"><span class="num">LAYER 2</span><h3>Emotional Drives</h3><p>The 8 Emotional Drives explain what each person is actually working for: Belonging, Security, Diversity, Recognition, Achievement, Growth, Excellence, Contribution. Starve someone's top drive and their behaviour changes, whatever their brain colour. The $10 Million Question maps them in two minutes.</p><div class="drives"><i style="background:var(--d1)"></i><i style="background:var(--d2)"></i><i style="background:var(--d3)"></i><i style="background:var(--d4)"></i><i style="background:var(--d5)"></i><i style="background:var(--d6)"></i><i style="background:var(--d7)"></i><i style="background:var(--d8)"></i></div></div>
-    <div class="card layer"><span class="num">LAYER 3</span><h3>AI Prediction</h3><p>The Predictive Psychology engine combines clarity process and drives for every member of a specific team and forecasts how each person will react to a given situation: a moved deadline, a new manager, a reorg. Not a type. A forecast for this team, this week.</p></div>
-  </div>
-  <div class="commercial">
-    <div><h3 style="font-size:22px;font-weight:700;margin-bottom:10px">What the retainer is built on</h3><p>Once a team is in the system, the dashboard keeps showing the leader where trust is forming and where it is about to break, the AI predicts how people will respond to what is coming, and the trainer is the person who turns that into action every month. That is not a workshop. That is a standing role.</p></div>
-    <!-- TODO: real team prediction screenshot from app.coloredbrain.com goes here as <img class="shot-img"> ; placeholder removed so nothing unfinished is visible to visitors -->
-  </div>
-</section>
 
 <section id="sessions">
   <div class="sec-head">
@@ -264,15 +286,15 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
   </div>
   <div class="sessions">
     <div class="card session">
-      <div class="when"><span class="num">1</span><span class="day">Monday 23 November</span><span class="time">2:00 PM GMT+8</span></div>
+      <div class="when"><span class="num">1</span><span class="day">Monday 23 November</span><span class="time">2:00 PM Singapore time</span></div>
       <div class="body"><span class="mono-tag">The WHY</span><h3>Run the prediction on yourself first</h3><p>You will have your own CBCI result and Emotional Drive map before we start. In the session you see how your clarity process and your top two drives combine, then watch the engine predict your own reaction to a scenario every team faces. You will recognise it. That is the point.</p><p class="out"><b>Outcome:</b> belief that this is a forecast, not a label, because you felt it on yourself.</p></div>
     </div>
     <div class="card session">
-      <div class="when"><span class="num">2</span><span class="day">Tuesday 24 November</span><span class="time">2:00 PM GMT+8</span></div>
+      <div class="when"><span class="num">2</span><span class="day">Tuesday 24 November</span><span class="time">2:00 PM Singapore time</span></div>
       <div class="body"><span class="mono-tag">The WHAT</span><h3>The debrief that turns one workshop into a standing relationship</h3><p>The exact debrief structure certified practitioners use to take a client from a single CBCI session to ongoing development, now with the drives layer. Three ways to work from one assessment: the 60 minute Trust Debrief, the Debrief plus Follow Up package, and the monthly Team Support retainer, where the dashboard and the AI keep the team developing and you keep the leader on track.</p><p class="out"><b>Outcome:</b> a clear picture of how a single assessment becomes repeat work and retainers, without a sales pitch.</p></div>
     </div>
     <div class="card session">
-      <div class="when"><span class="num">3</span><span class="day">Friday 27 November</span><span class="time">7:00 PM GMT+8</span></div>
+      <div class="when"><span class="num">3</span><span class="day">Friday 27 November</span><span class="time">7:00 PM Singapore time</span></div>
       <div class="body"><span class="mono-tag">The HOW</span><h3>From one debrief to a whole organisation</h3><p>How to take the system from individuals to full team workshops and organisational conversations using the team dashboard, so one debrief grows into ongoing work with the whole company. For anyone who wants to go further, there's an invitation at the end. No pressure, and everything before it is yours either way.</p><p class="out"><b>Outcome:</b> a workshop structure you can run with a real team, and the language to sell it.</p></div>
     </div>
   </div>
@@ -333,24 +355,18 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
   </div>
 </section>
 
-<section class="register" id="register">
-  <div class="reg-grid">
-    <div>
-      <div class="kicker">Claim your seat</div>
-      <h2 style="margin-top:14px">Claim your free seat and your assessment</h2>
-      <p>Fill in your details. You will get your CBCI assessment link and the Emotional Drives questionnaire immediately, and the session links by email.</p>
-      <p><b>23, 24 and 27 November.</b> Live online, GMT+8.</p>
-      <p style="font-size:14px;color:var(--muted)">Live prediction demos work best in a small room, so register now and you are in this cohort, not the next one.</p>
-    </div>
-    <div class="card regbox">
-      <div class="kicker">Registration</div>
-      <!-- On coloredbrain.com this iframe renders the WebinarJam form in place. In a preview, embeds are blocked, so the button below takes over. -->
-      <iframe id="wj-form" title="Masterclass registration" src="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat"></iframe>
-      <p class="fine" id="fallback" style="margin-top:10px;font-size:13px;color:var(--muted)">Form not showing? <a href="https://event.webinarjam.com/register/259/z4l2gaz2/form-embed?formBgColor=%23ffffff&formBgOpacity=1&formAccentColor=%23C8322B&formAccentOpacity=1&formButtonText=Claim%20My%20Free%20Seat" target="_blank" rel="noopener">Open the registration form</a></p>
-    </div>
-  </div>
+<section class="closing" id="closing">
+  <div class="kicker" style="justify-content:center">Last word</div>
+  <h2 style="margin-top:14px">Three free sessions. Your own assessment. The debrief that turns one workshop into a retainer.</h2>
+  <p><b>23, 24 and 27 November.</b> Live online, Singapore time. Replays go to every registrant, so register even if you can only make one.</p>
+  <a class="btn btn-cta" href="#register">Claim my free seat + assessment</a>
+  <p class="fine">100% free · CBCI assessment and Emotional Drive map included ($40 value) · 991 certified practitioners in 28 countries</p>
 </section>
 
+<div class="stickybar" id="stickybar" aria-hidden="true">
+  <div class="sb-text"><b>Free masterclass · 23, 24, 27 Nov</b>Your CBCI assessment included</div>
+  <a class="btn" href="#register">Claim my seat</a>
+</div>
 <footer><span>Directive Communication Psychology · Colored Brain</span><span><a href="/">coloredbrain.com</a></span></footer>
 </div>
 
@@ -368,8 +384,8 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
       let u; try{ u=new URL(d.url); }catch(err){ return; }
       if(!/(^|\.)webinarjam\.com$|(^|\.)coloredbrain\.com$/.test(u.hostname)) return;
       try{ fbq('track','Lead',{content_name:'client-magnet-masterclass'}); fbq('track','CompleteRegistration',{content_name:'client-magnet-masterclass'}); sessionStorage.setItem('cb_lead_fired','1'); }catch(err){}
-      // LinkedIn: "webinar registration" conversion (Campaign Manager conversion ID 31650058)
-      try{ window.lintrk && window.lintrk('track', { conversion_id: 31650058 }); }catch(err){}
+      // LinkedIn: "webinar registration" conversion (Campaign Manager conversion ID 31650050, confirmed against the conversion's own code snippet in LinkedIn Campaign Manager on 2026-10-29)
+      try{ window.lintrk && window.lintrk('track', { conversion_id: 31650050 }); }catch(err){}
       setTimeout(function(){ window.location.href=u.href; },300);
     }
   });
@@ -377,7 +393,16 @@ footer{border-top:1px solid var(--line);padding-block:26px;font-size:13.5px;colo
 </script>
 
 <script>
-// Show each session in the visitor's own time zone under the GMT+8 time (hidden for visitors already on GMT+8)
+// Sticky mobile bar: hide it while the registration form is already on screen, show it everywhere else
+(function(){
+  const bar=document.getElementById('stickybar'), form=document.getElementById('register');
+  if(!bar||!form||!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(es=>{ bar.classList.toggle('hide', es[0].isIntersecting); },{threshold:0.15}).observe(form);
+})();
+</script>
+
+<script>
+// Show each session in the visitor's own time zone under the Singapore time (hidden for visitors already on GMT+8)
 (function(){
   try{
     const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';
