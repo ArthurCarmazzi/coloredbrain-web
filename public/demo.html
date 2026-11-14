@@ -183,7 +183,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-si
 <section class="step" id="s-team" hidden>
   <div class="kicker">What the engine predicts</div>
   <h2 style="font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.1">Same news, six different reactions. That is why teams misfire.</h2>
-  <p style="color:var(--ink2)">Here is a sample product team. The Colored Brain system already holds each member's Emotional Drives and their Clarity Process. Watch what the engine predicts when this message lands on a Monday morning.</p>
+  <p style="color:var(--ink2)">Here is a sample product team. The Colored Brain system already holds each member's Emotional Drives and their Clarity getting process. Watch what the engine predicts when this message lands on a Monday morning.</p>
   <div class="scenario"><span class="mono">Monday 09:02 · message from the CEO</span><p>"Launch moves from 12 December to 28 November. Scope stays the same. I know you can do it."</p></div>
   <div class="team" id="team"></div>
   <p class="flag">Sample team, illustrative. Your card uses your real answers from the last step.</p>
@@ -356,11 +356,11 @@ function computeAndShow(){
   $("readout").innerHTML = `<h3>What this means on a Tuesday</h3>
     <p>${r[0].n} is fed by ${r[0].fed}. ${r[1].n} is fed by ${r[1].fed}. When both are fed you are at your best. Starve the first one and you ${r[0].starved}.</p>
     <p>${low.n} sits at the bottom. Nothing wrong with that, but a teammate who runs on it will read you as not caring about ${low.fed}. That mismatch, not personality, is where most team friction starts.</p>
-    <p class="fine">The full engine combines these drives with your Clarity Process (your brain colour) to predict how you will act in a specific team under specific pressure. That is the next step.</p>`;
+    <p class="fine">The full engine combines these drives with your Clarity getting process (your Brain Color) to predict how you will act in a specific team under specific pressure. That is the next step.</p>`;
   show("s-res");
 }
 
-/* Sample team. Illustrative. Each member: name, role, Clarity Process, top two drives, predicted reaction to the deadline message. */
+/* Sample team. Illustrative. Each member: name, role, Clarity getting process, top two drives, predicted reaction to the deadline message. */
 const TEAM = [
   {n:"Mei", r:"Product lead", cp:"Blue", d:["achieve","recog"], p:"Says yes in the meeting before anyone else. Will quietly drop two features by Thursday and present it as a win."},
   {n:"Farid", r:"Engineering", cp:"Green", d:["secure","excel"], p:"Pushes back within the hour with a risk list. Reads the CEO's confidence as pressure, not trust. Needs a written plan before he moves."},
@@ -390,7 +390,7 @@ function renderTeam(){
   $("team").innerHTML = cards.join("");
   $("team-read").innerHTML = `<h3>What a certified practitioner does with this</h3>
     <p>Six people, one message, six predictable reactions. The practitioner briefs the CEO before the message goes out: give Farid the plan in writing, give Aisha the customer reason, give Mei a scope conversation before she makes it herself. Same deadline, no friction.</p>
-    <p>No DISC profile predicts any of that, because DISC describes the individual in isolation. Emotional Drives plus Clarity Process predicts the person inside this team, under this pressure.</p>`;
+    <p>No DISC profile predicts any of that, because DISC describes the individual in isolation. Emotional Drives plus Clarity getting process predicts the person inside this team, under this pressure.</p>`;
 }
 function member(m,you){
   const dr = m.d.map(k=>DRIVES.find(d=>d.k===k));
