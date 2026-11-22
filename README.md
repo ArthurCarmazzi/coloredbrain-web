@@ -11,6 +11,7 @@ Node.js (Express) server for the Colored Brain marketing site (app.coloredbrain.
 | `/webinar-thanks` | Masterclass registrants (hidden, noindex) | WebinarJam "thank you page" destination: fires Meta Lead + CompleteRegistration, pushes the free CBCI, add to calendar links for 23, 24 and 27 Nov |
 | `/vip-welcome` | $15 VIP buyers only (hidden, noindex) | Kartra checkout success page: fires Meta Purchase ($15), holds the private WhatsApp circle link. Never link it from a public page |
 | `/demo` | Ad traffic, lead magnet | The $10 Million Question: 5 question Emotional Drives demo, drive map, sample team prediction, opt in to Kartra then WebinarJam |
+| `/four-brains` | LinkedIn and Instagram traffic, HR and team leaders | Four Brains, One Message: animated demo of how four Brain Colors hear one message, an Emotional Drives picker, and a type your own message box answered by AI (`api/four-brains.js`) |
 | `/intro` | Whop buyers (hidden) | Copy of the home page with a Special Introductory Offer banner, no Classic CBCI button, buy buttons pointing to Whop. Not linked from any menu, noindex; share the direct URL only |
 
 Old `.html` links (e.g. `/pricing.html`) redirect permanently to the clean URL. Unknown URLs get a branded 404 page. `/healthz` returns `{"ok":true}` for uptime checks.
@@ -24,6 +25,19 @@ npm run dev        # restarts on file changes
 ```
 
 Set `PORT` to change the port.
+
+## Four Brains AI box (environment variables)
+
+The typing box on `/four-brains` only appears when the server has an AI key. Set these in Hostinger (hPanel, Node.js app, environment variables), never in this repo:
+
+| Variable | Needed | What it does |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | Yes | The AI key. Without it the box stays hidden and the three examples still work |
+| `FOUR_BRAINS_MODEL` | No | Model name. Defaults to the cheapest one, `claude-haiku-5-5` |
+| `FOUR_BRAINS_PER_VISITOR` | No | Typed messages per visitor per day. Default 6 |
+| `FOUR_BRAINS_DAILY_CAP` | No | Typed messages per day across everyone. Default 400 |
+
+The box needs the Node server, so it never appears on the GitHub Pages copy.
 
 ## Deploy to Hostinger (Cloud hosting, Node.js app)
 

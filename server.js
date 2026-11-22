@@ -51,6 +51,9 @@ app.use("/intro", (req, res, next) => {
 // Private masterclass dashboard (password protected; secrets come from environment variables)
 app.use("/admin/masterclass", require("./admin/masterclass"));
 
+// Four Brains, One Message: AI endpoint behind the "type your own message" box on /four-brains
+app.use("/api/four-brains", require("./api/four-brains"));
+
 // Health check for the host's monitoring
 app.get("/healthz", (req, res) => res.json({ ok: true }));
 
