@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Same Person, Different Team: The Team Simulator | Colored Brain</title>
+<meta name="description" content="A solo personality test gives you a label. The Colored Brain Predictive Psychology Engine reads each person in reference to their team. Try the simulator and watch the friction move.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Same Maya. Different team. Different picture.">
+<meta property="og:description" content="Flip between a solo test and the Colored Brain team lens. See how Brain Color (HOW) and Emotional Drives (WHY) change who clashes.">
+<meta property="og:url" content="https://home.coloredbrain.com/team-simulator">
+<link rel="canonical" href="https://home.coloredbrain.com/team-simulator">
+<meta property="og:image" content="https://home.coloredbrain.com/img/team-simulator-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Facebook Pixel (same id as the rest of the site) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','304613799943496');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=304613799943496&ev=PageView&noscript=1"/></noscript>
+<!-- LinkedIn Insight Tag -->
+<script type="text/javascript">
+_linkedin_partner_id = "9950506";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9950506&fmt=gif" />
+</noscript>
+<style>
+/* Layout idea: dark night lab scroll story. Hero with portrait, the solo vs team simulator, the 36 second video, a comparison table, CTA. Same tokens as four-brains so the two tools feel like one family. */
+:root{
+  --bg:#0a1222; --panel:#121d33; --panel2:#18263f; --ink:#eef3fb; --muted:#9fb1cd; --line:#27385a;
+  --green:#34c77b; --red:#f2545b; --purple:#a877ff; --blue:#46a3ff; --ai:#ffc04a;
+  --display:'Bricolage Grotesque','Arial Black',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.05;margin:0}
+h1{font-size:clamp(34px,6vw,60px);font-weight:800}
+h2{font-size:clamp(24px,4vw,36px);font-weight:800}
+h3{font-size:18px;font-weight:800}
+p{margin:0}
+section{padding:30px 0}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ai);margin-bottom:10px}
+.lead{color:var(--muted);max-width:62ch;margin-top:12px;font-size:19px}
+.hero{padding:44px 0 10px}
+.hero-grid{display:grid;grid-template-columns:1fr 210px;gap:34px;align-items:center}
+.hero h1 span{background:linear-gradient(90deg,var(--green),var(--blue),var(--purple),var(--red));-webkit-background-clip:text;background-clip:text;color:transparent}
+.me{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.ring{padding:5px;border-radius:50%;background:conic-gradient(var(--green),var(--red),var(--purple),var(--blue),var(--green));animation:spin 14s linear infinite}
+.ring img{display:block;width:176px;height:176px;border-radius:50%;object-fit:cover;background:#fff;animation:spin 14s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.me b{font-family:var(--display);font-size:18px}
+.me small{color:var(--muted);font-size:13px;line-height:1.3}
+@media (max-width:680px){.hero-grid{grid-template-columns:1fr}.me{order:-1}}
+@media (prefers-reduced-motion:reduce){.ring,.ring img{animation:none}.line.hot{animation:none}}
+
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px;margin-top:20px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;margin-bottom:8px;font-weight:700}
+button,select{font-family:var(--body)}
+.chip{background:var(--panel2);border:1px solid var(--line);color:var(--ink);padding:9px 14px;border-radius:999px;font-weight:700;font-size:13px;cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--ai)}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.toggle{display:flex;background:var(--panel2);border-radius:999px;padding:4px;border:1px solid var(--line);width:fit-content;margin-top:6px;flex-wrap:wrap}
+.toggle button{border:0;background:transparent;color:var(--muted);font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px;cursor:pointer;transition:.25s}
+.toggle button.on.solo{background:#59607f;color:#fff}
+.toggle button.on.team{background:linear-gradient(90deg,var(--green),var(--blue));color:#07101f}
+.stage{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px}
+.stage>div{min-width:0}
+@media(max-width:820px){.stage{grid-template-columns:minmax(0,1fr)}}
+.toggle{max-width:100%}
+.toggle button{flex:1 1 auto}
+.map{background:var(--panel2);border-radius:14px;padding:6px;position:relative;overflow:hidden}
+svg{width:100%;height:auto;display:block;font-family:var(--body)}
+.node{cursor:pointer}
+.node text{fill:#07101f;font-weight:700;text-anchor:middle}
+.line{stroke:#3a4580;stroke-width:1.5;opacity:.5;transition:.3s}
+.line.hot{stroke:var(--ai);stroke-width:3.5;stroke-dasharray:8 6;opacity:1;animation:dash 1s linear infinite}
+.line.drive{stroke:#ff6fa5;stroke-width:3;stroke-dasharray:3 6;opacity:1}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.hide{opacity:0!important}
+.score{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.stat{flex:1;min-width:120px;background:var(--panel2);border-radius:12px;padding:12px;border:1px solid var(--line)}
+.stat b{display:block;font-family:var(--display);font-size:30px;line-height:1.1}
+.stat small{color:var(--muted);font-size:12px}
+.out h3{margin:0 0 8px}
+.say{border-left:4px solid var(--c,#555);background:var(--panel2);padding:10px 12px;border-radius:0 10px 10px 0;margin-bottom:8px;font-size:14px}
+.say b{color:var(--c)}
+.say.muted{--c:#9aa3c7;color:#c4cbed}
+.warn{background:#2b2410;border:1px solid #6a5516;border-radius:12px;padding:11px 13px;margin-bottom:8px;font-size:13.5px}
+.warn .fix{color:#bff0cf;margin-top:4px}
+.drv{display:grid;gap:6px;margin-bottom:6px}
+.drv .p{min-width:0;display:flex;gap:6px;align-items:center;font-size:12px}
+.drv .p b{width:48px;font-weight:700}
+.drv select{flex:1 1 0;width:0;min-width:0;text-overflow:ellipsis;background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px;font-weight:700;font-size:11px}
+.drv.off{opacity:.35;pointer-events:none}
+.tag{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:2px 9px;margin-top:5px}
+.tag.up{background:#10361f;color:#9af0bf}.tag.dn{background:#3a1717;color:#ffadad}.tag.mid{background:#262d52;color:#b8c0e6}
+.dbl{color:#ff9aa8;font-weight:800;font-size:11px;letter-spacing:1px}
+.punch{margin-top:12px;background:linear-gradient(120deg,#16294f,#2a1d55);border-radius:14px;padding:14px 16px;font-size:15px}
+.btn{background:var(--ai);color:#1a1400;border:0;border-radius:12px;font-weight:800;font-size:14px;padding:12px 18px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid #4a5aa8}
+.vid{margin-top:14px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000;max-width:560px}
+.vid video{display:block;width:100%;height:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+th,td{padding:11px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+td.bad{color:#b8bfdc}
+td.good{color:#d9ffe9}
+.cta{margin-top:26px;text-align:center;padding:30px 18px;border-radius:20px;background:linear-gradient(135deg,#15306b,#3a1a6b);border:1px solid #4a5aa8}
+.cta h2{line-height:1.15}
+.cta p{color:#c9d0f5;margin:10px auto 18px;max-width:560px}
+.cta .row{justify-content:center}
+.drv select{font-size:16px}
+@media(max-width:820px){.drv .p{flex-wrap:wrap}.drv .p b{width:100%}.drv select{flex:1 1 140px;width:auto}}
+@media(max-width:680px){.ring img{width:84px;height:84px}.hero{padding-top:24px}.hero-grid{gap:16px}}
+@media(max-width:480px){.toggle{border-radius:16px}.toggle button{padding:10px 12px;font-size:13px}}
+.foot{color:var(--muted);font-size:12px;margin:18px 0 40px;text-align:center}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap hero-grid">
+  <div>
+    <div class="eyebrow">Directive Communication Psychology + AI</div>
+    <h1>One person. Two ways to read them. <span>Only one knows your team.</span></h1>
+    <p class="lead">A standalone personality test hands you a label and waves goodbye. The Colored Brain Predictive Psychology Engine reads each person in reference to the team they are in: HOW they get clarity (Brain Color) plus WHY they act (Emotional Drives). Brain Color is not personality. It is HOW a brain gets clarity. Flip the switch and watch.</p>
+  </div>
+  <div class="me">
+    <div class="ring"><img src="/img/arthur-hero.webp" alt="Arthur Carmazzi"></div>
+    <b>Arthur Carmazzi</b>
+    <small>Founder, Directive Communication Psychology<br>Creator of the Colored Brain Communication Inventory (CBCI)</small>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <section>
+  <div class="panel">
+    <div class="lbl">1. Pick a moment that actually happens at work</div>
+    <div class="row" id="scen"></div>
+    <div class="lbl" style="margin-top:16px">2. Pick your lens</div>
+    <div class="toggle" id="lens">
+      <button class="solo on" data-l="solo">Solo personality test</button>
+      <button class="team" data-l="team">Colored Brain team lens</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="stage">
+      <div>
+        <div class="map solo" id="mapbox">
+          <svg viewBox="0 0 480 340" id="svg" role="group" aria-label="Team map. Each person is a button that changes their Brain Color."></svg>
+        </div>
+        <p class="foot" style="text-align:left;margin:8px 0 0">Yellow dashes: HOW clash (Brain Color). Pink dots: WHY clash (Emotional Drives). Burst: double hit. Demo rules are simplified. In the real engine, each person's danger zone comes from their own CBCI results, not a fixed color pairing.</p>
+        <div class="lbl" style="margin-top:12px">Tap a person to change their Brain Color. Pick their top 2 Emotional Drives below.</div>
+        <div id="drv" class="drv"></div>
+        <div class="row">
+          <button class="btn ghost" id="swap">Same Maya, different team</button>
+          <button class="btn ghost" id="reset">Reset</button>
+        </div>
+        <div class="score">
+          <div class="stat"><b id="sFric">?</b><small>teammate pairs with friction</small></div>
+          <div class="stat"><b id="sMaya">?</b><small>friction involving Maya</small></div>
+          <div class="stat"><b id="sDbl">?</b><small>double hits (Brain Color and drive)</small></div>
+        </div>
+      </div>
+      <div class="out" id="out" aria-live="polite"></div>
+    </div>
+    <div class="punch" id="punch"></div>
+  </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">36 seconds, no sound needed</div>
+    <h2>Prefer to watch it first?</h2>
+    <div class="vid"><video controls playsinline preload="metadata" src="/video/same-maya-different-team.mp4" poster="/img/team-simulator-og.jpg"></video></div>
+  </section>
+
+  <section>
+    <div class="panel">
+      <div class="lbl">Same person. Different questions answered.</div>
+      <div style="overflow-x:auto"><table>
+        <tr><th scope="col"></th><th scope="col">A personality test read on its own</th><th scope="col">The engine</th></tr>
+        <tr><td>Who does it look at?</td><td class="bad">One person, alone in a room</td><td class="good">Each person in reference to their team</td></tr>
+        <tr><td>Does it know WHY they act?</td><td class="bad">Usually a separate tool, if anyone looks at all</td><td class="good">Brain Color is the HOW. Emotional Drives are the WHY. The engine reads both</td></tr>
+        <tr><td>What do you get?</td><td class="bad">Mostly a label and a PDF</td><td class="good">Likely reactions, matches and clashes for this specific team</td></tr>
+        <tr><td>Does it know Maya moves teams?</td><td class="bad">Maya is Maya. Forever. Everywhere.</td><td class="good">We are different people in different groups, and the engine shows it</td></tr>
+        <tr><td>What happens Monday?</td><td class="bad">Too often: everyone nods, nothing changes</td><td class="good">AI guidance on how to improve the teamwork</td></tr>
+      </table></div>
+    </div>
+
+    <div class="cta">
+      <h2>Your team is not a pile of labels.</h2>
+      <p>See how the engine reads your actual people, who has who in their danger zone, and what to say to fix it before the next deadline.</p>
+      <div class="row">
+        <a class="btn" href="/" data-cta="home">Take the CBCI</a>
+        <a class="btn ghost" href="/trainers" data-cta="trainers">Coach or trainer? See certification</a>
+      </div>
+    </div>
+    <p class="foot">Illustrative demo with fictional people and simplified rules. Real results come from each person's own Colored Brain results inside the engine. Colored Brain and Emotional Drives are part of Directive Communication Psychology by Arthur Carmazzi.</p>
+  </section>
+</main>
+
+<script>
+
+var COL={
+  Green:{hex:'#34c77b',danger:'Purple',solo:'energetic, spontaneous, big picture'},
+  Red:{hex:'#f2545b',danger:'Blue',solo:'organized, precise, practical'},
+  Purple:{hex:'#a877ff',danger:'Green',solo:'careful, thorough, detail minded'},
+  Blue:{hex:'#46a3ff',danger:'Red',solo:'thoughtful, intuitive, reflective'}
+};
+var ORDER=['Green','Red','Purple','Blue'];
+var SCEN=[
+ {id:'deadline',t:'Client moves the deadline up two weeks',r:{
+   Green:'Already sketching three versions of the new plan. Moving before the email is finished.',
+   Red:'Pulls up the plan, recalculates the sequence, asks what gets cut before agreeing.',
+   Purple:'Wants every detail of what changed before reacting. Then picks from the options.',
+   Blue:'Goes quiet, reflects on a similar past crunch, then gives a gut call.'}},
+ {id:'tool',t:'Leadership announces a new tool',r:{
+   Green:'Jumps in and tries it. Learns the rules by poking everything.',
+   Red:'Wants the process, steps and owners before touching it.',
+   Purple:'Needs the full picture: what it replaces, what it connects to, what changes.',
+   Blue:'Compares it to tools that worked or flopped before, then follows the feeling.'}},
+ {id:'client',t:'A big client complains loudly',r:{
+   Green:'Calls the client now and improvises a fix mid call.',
+   Red:'Pulls the account history, finds where the process broke, proposes a corrective sequence.',
+   Purple:'Collects the complete timeline before saying a word.',
+   Blue:'Senses what the client really needs behind the words. May reply later than anyone likes.'}},
+ {id:'merge',t:'Two teams get merged',r:{
+   Green:'Sees possibilities and starts rearranging the org in their head.',
+   Red:'Maps who owns what and where the handoffs will break.',
+   Purple:'Asks for the complete org detail before forming a view.',
+   Blue:'Reflects on how past mergers felt and who will be affected.'}}
+];
+var FRIC={
+ 'Green>Purple':{why:'{a} is already moving. {b} needs the full detail first, so {a} reads the pause as stalling.',fix:'Send {b} the details before the meeting, not during it.'},
+ 'Purple>Green':{why:'{a} has {b} in the danger zone. Half formed ideas feel like skipped steps.',fix:'{b} shares a one page summary: what is decided, what is still open.'},
+ 'Red>Blue':{why:'{a} wants the data checked. {b} says it feels right. {a} hears a hunch, {b} hears a roadblock.',fix:'{b} names the past experience behind the hunch. {a} tests it fast.'},
+ 'Blue>Red':{why:'{a} reflects before answering. {b} fires rapid questions that land as pressure.',fix:'{b} sends questions ahead. {a} answers after a night to think.'}
+};
+var DRIVES=['Love and Belonging','Security and Control','Diversity and Change','Significance and Recognition','Achievement','Growth and Challenge','Excellence','Contribution and Responsibility'];
+var TEAMS={
+ A:[{n:'Maya',c:'Green',d:['Diversity and Change','Achievement']},{n:'Raj',c:'Red',d:['Security and Control','Excellence']},{n:'Lena',c:'Purple',d:['Security and Control','Love and Belonging']},{n:'Omar',c:'Blue',d:['Love and Belonging','Growth and Challenge']}],
+ B:[{n:'Maya',c:'Green',d:['Diversity and Change','Achievement']},{n:'Sam',c:'Red',d:['Significance and Recognition','Excellence']},{n:'Ivy',c:'Blue',d:['Love and Belonging','Growth and Challenge']},{n:'Zoe',c:'Green',d:['Diversity and Change','Significance and Recognition']}]
+};
+var PULL={deadline:['Achievement','Growth and Challenge'],tool:['Diversity and Change','Growth and Challenge'],client:['Contribution and Responsibility','Significance and Recognition','Achievement'],merge:['Diversity and Change','Significance and Recognition']};
+var THREAT={deadline:['Security and Control','Excellence'],tool:['Security and Control'],client:['Love and Belonging'],merge:['Security and Control','Love and Belonging']};
+function driveStatus(m){
+  var t=THREAT[SCEN[scen].id],p=PULL[SCEN[scen].id],i;
+  for(i=0;i<2;i++)if(t.indexOf(m.d[i])>-1)return {k:'dn',t:'Uneasy: this hits their drive for '+m.d[i]+'. Watch for resistance, even if they say yes.'};
+  for(i=0;i<2;i++)if(p.indexOf(m.d[i])>-1)return {k:'up',t:'Energized: this feeds their drive for '+m.d[i]+'. They will likely lean in.'};
+  return {k:'mid',t:'No strong pull either way, so the Brain Color decides how they respond.'};
+}
+function driveFric(i,j){
+  var a=team[i],b=team[j];
+  var sa=a.d.indexOf('Security and Control')>-1,sb=b.d.indexOf('Security and Control')>-1;
+  var da=a.d.indexOf('Diversity and Change')>-1,db=b.d.indexOf('Diversity and Change')>-1;
+  if(sa&&db)return {why:a.n+' needs Security and Control. '+b.n+' craves Diversity and Change. One hears reckless, the other hears rigid.',fix:'Agree the safe boundaries first, then let '+b.n+' vary inside them.'};
+  if(sb&&da)return {why:b.n+' needs Security and Control. '+a.n+' craves Diversity and Change. One hears reckless, the other hears rigid.',fix:'Agree the safe boundaries first, then let '+a.n+' vary inside them.'};
+  var ra=a.d.indexOf('Significance and Recognition')>-1,rb=b.d.indexOf('Significance and Recognition')>-1;
+  if(ra&&rb)return {why:a.n+' and '+b.n+' both chase Significance and Recognition. Significance is a scarcity drive: there is only one spotlight, so credit becomes a quiet contest.',fix:'Give each their own arena, or credit each by name out loud.'};
+  return null;
+}
+var POS=[[90,70],[390,70],[90,270],[390,270]];
+var focusI=null, team=JSON.parse(JSON.stringify(TEAMS.A)), teamKey='A', scen=0, lens='solo', swapped=false;
+
+function pairs(){
+  var out=[];
+  for(var i=0;i<4;i++)for(var j=i+1;j<4;j++){
+    var col=[];
+    if(COL[team[i].c].danger===team[j].c)col.push([i,j]);
+    if(COL[team[j].c].danger===team[i].c)col.push([j,i]);
+    var dr=driveFric(i,j);
+    if(col.length||dr)out.push({i:i,j:j,col:col,dr:dr});
+  }
+  return out;
+}
+function fill(s,a,b){return s.replace(/\{a\}/g,a).replace(/\{b\}/g,b)}
+
+function drawScen(){
+  var el=document.getElementById('scen');el.innerHTML='';
+  SCEN.forEach(function(s,i){
+    var b=document.createElement('button');b.className='chip'+(i===scen?' on':'');b.setAttribute('aria-pressed',i===scen);b.textContent=s.t;
+    b.onclick=function(){scen=i;render();drawScen()};el.appendChild(b);
+  });
+}
+function drawDrv(){
+  var el=document.getElementById('drv');el.innerHTML='';
+  el.className='drv'+(lens==='solo'?' off':'');
+  team.forEach(function(m,i){
+    var row=document.createElement('div');row.className='p';
+    var h='<b>'+m.n+'</b>';
+    for(var k=0;k<2;k++){
+      h+='<select data-i="'+i+'" data-k="'+k+'">';
+      DRIVES.forEach(function(d){h+='<option'+(m.d[k]===d?' selected':'')+'>'+d+'</option>'});
+      h+='</select>';
+    }
+    row.innerHTML=h;el.appendChild(row);
+  });
+  [].forEach.call(el.querySelectorAll('select'),function(sel){
+    sel.disabled=(lens==='solo');sel.setAttribute('aria-label',team[+sel.getAttribute('data-i')].n+' Emotional Drive '+(+sel.getAttribute('data-k')+1));sel.onchange=function(){var m=team[+sel.getAttribute('data-i')],k=+sel.getAttribute('data-k');if(m.d[1-k]===sel.value){m.d[1-k]=m.d[k]}m.d[k]=sel.value;drawDrv();render(true)};
+  });
+}
+function render(keepDrv){
+  var P=pairs(), svg=document.getElementById('svg'), html='', team_=lens==='team';
+  var map={};P.forEach(function(p){map[p.i+'-'+p.j]=p});
+  for(var i=0;i<4;i++)for(var j=i+1;j<4;j++){
+    var p=map[i+'-'+j],cls='line';
+    if(p&&team_){cls+=p.col.length?' hot':' drive'}
+    if(!team_)cls+=' hide';
+    html+='<line class="'+cls+'" x1="'+POS[i][0]+'" y1="'+POS[i][1]+'" x2="'+POS[j][0]+'" y2="'+POS[j][1]+'"/>';
+  }
+  team.forEach(function(m,i){
+    var x=POS[i][0],y=POS[i][1],c=COL[m.c].hex,iso=!team_;
+    html+='<g class="node" data-i="'+i+'" tabindex="0" role="button" aria-label="'+m.n+(iso?'':', '+m.c)+'. Press to change Brain Color.">'+
+      '<circle class="dot" cx="'+x+'" cy="'+y+'" r="46" fill="'+c+'" opacity="'+(iso?'.55':'1')+'" stroke="'+(m.n==='Maya'?'#fff':'none')+'" stroke-width="3"/>'+
+      '<text x="'+x+'" y="'+(y-2)+'" font-size="15">'+m.n+'</text>'+
+      '<text x="'+x+'" y="'+(y+16)+'" font-size="11" style="font-weight:600;opacity:.9">'+(iso?'?':m.c)+'</text></g>';
+  });
+  if(team_){
+    P.forEach(function(p){
+      var mx=(POS[p.i][0]+POS[p.j][0])/2,my=(POS[p.i][1]+POS[p.j][1])/2;
+      html+='<text x="'+mx+'" y="'+(my+6)+'" font-size="20" fill="#ffc04a" style="text-anchor:middle">'+(p.col.length&&p.dr?'&#128165;':'&#9888;&#65039;')+'</text>';
+    });
+  }
+  svg.innerHTML=html;
+  [].forEach.call(svg.querySelectorAll('.node'),function(n){
+    var cyc=function(kb){
+      var i=+n.getAttribute('data-i'),k=ORDER.indexOf(team[i].c);
+      team[i].c=ORDER[(k+1)%4];if(kb)focusI=i;render();
+    };
+    n.onclick=function(){cyc(false)};
+    n.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();cyc(true)}};
+  });
+  if(focusI!==null){var fn=svg.querySelector('[data-i="'+focusI+'"]');if(fn)fn.focus();focusI=null}
+  document.getElementById('mapbox').className='map '+lens;
+  if(!keepDrv)drawDrv();else{document.getElementById('drv').className='drv'+(lens==='solo'?' off':'');[].forEach.call(document.querySelectorAll('#drv select'),function(x){x.disabled=(lens==='solo')})}
+
+  var f=document.getElementById('sFric'),fm=document.getElementById('sMaya'),fd=document.getElementById('sDbl');
+  if(team_){
+    f.textContent=P.length;
+    fm.textContent=P.filter(function(p){return team[p.i].n==='Maya'||team[p.j].n==='Maya'}).length;
+    fd.textContent=P.filter(function(p){return p.col.length&&p.dr}).length;
+  }else{f.textContent='?';fm.textContent='?';fd.textContent='?'}
+
+  var o='',S=SCEN[scen];
+  if(!team_){
+    o+='<h3>What a solo test tells you</h3>';
+    team.forEach(function(m){
+      o+='<div class="say muted"><b>'+m.n+':</b> '+COL[m.c].solo+'. That is the whole report.</div>';
+    });
+    o+='<div class="say muted">Scenario: <b>'+S.t+'</b>. Who clashes? What motivates who? Who has who in their danger zone? Why does anyone care? A solo report does not say.</div>';
+  }else{
+    o+='<h3>Likely reactions: '+S.t+'</h3>';
+    team.forEach(function(m){
+      var st=driveStatus(m);
+      o+='<div class="say" style="--c:'+COL[m.c].hex+'"><b>'+m.n+' ('+m.c+'):</b> '+S.r[m.c]+
+         '<div><span class="tag '+st.k+'">WHY: '+m.d[0]+' + '+m.d[1]+'</span></div>'+
+         '<div style="font-size:12.5px;color:#c4cbed;margin-top:3px">'+st.t+'</div></div>';
+    });
+    o+='<h3 style="margin-top:14px">Where it breaks, and the fix</h3>';
+    if(!P.length)o+='<div class="say" style="--c:#2fbf71">No friction flagged by these demo rules. Change a Brain Color or a drive and see what shifts.</div>';
+    P.forEach(function(p){
+      var a=team[p.i],b=team[p.j],txt='',fix='';
+      p.col.forEach(function(c){
+        var A=team[c[0]],B=team[c[1]],F=FRIC[A.c+'>'+B.c];
+        txt+='<div><b>HOW (Brain Color):</b> '+fill(F.why,A.n,B.n)+'</div>';
+        fix+='<div>Fix: '+fill(F.fix,A.n,B.n)+'</div>';
+      });
+      if(p.dr){txt+='<div style="margin-top:4px"><b>WHY (drives):</b> '+p.dr.why+'</div>';fix+='<div>Fix: '+p.dr.fix+'</div>'}
+      o+='<div class="warn"><b>'+a.n+' &amp; '+b.n+'</b> '+(p.col.length&&p.dr?'<span class="dbl">DOUBLE HIT</span>':'')+txt+'<div class="fix">'+fix+'</div></div>';
+    });
+  }
+  document.getElementById('out').innerHTML=o;
+
+  var pu=document.getElementById('punch');
+  if(!team_)pu.innerHTML='<b>Solo lens:</b> Maya gets the same label on every team she will ever join, and nobody asks what drives her. Convenient. Also not much help the moment she walks into a meeting. Now flip to the team lens.';
+  else if(swapped)pu.innerHTML='<b>Same Maya. Different team. Different picture.</b> Maya is the same person on both teams. Her friction is not. A solo test would give you the identical report both times. That is the gap.';
+  else pu.innerHTML='<b>Now try this:</b> hit "Same Maya, different team", or give two people the same drive for Significance and Recognition, and watch the friction move.';
+  [].forEach.call(document.querySelectorAll('#lens button'),function(b){
+    b.classList.toggle('on',b.getAttribute('data-l')===lens);b.setAttribute('aria-pressed',b.getAttribute('data-l')===lens);
+  });
+}
+
+document.getElementById('lens').onclick=function(e){
+  var b=e.target.closest('button');if(!b)return;lens=b.getAttribute('data-l');render();
+};
+document.getElementById('swap').onclick=function(){
+  teamKey=teamKey==='A'?'B':'A';swapped=true;team=JSON.parse(JSON.stringify(TEAMS[teamKey]));
+  if(lens==='solo'){lens='team'}
+  render();
+};
+document.getElementById('reset').onclick=function(){
+  teamKey='A';swapped=false;team=JSON.parse(JSON.stringify(TEAMS.A));lens='solo';scen=0;drawScen();render();
+};
+drawScen();render();
+
+/* analytics: keep UTM tags on outbound CTAs, fire Meta custom events (engaged = flipped to team lens, video play, CTA click) */
+function ev(n,d){try{if(window.fbq)fbq('trackCustom',n,d||{})}catch(e){}}
+[].forEach.call(document.querySelectorAll('[data-cta]'),function(a){
+  if(location.search)a.href=a.getAttribute('href')+location.search;
+  a.addEventListener('click',function(){ev('TeamSimulatorCTA',{cta:a.getAttribute('data-cta')})});
+});
+var sawTeam=false;document.getElementById('lens').addEventListener('click',function(e){var b=e.target.closest('button');if(b&&b.getAttribute('data-l')==='team'&&!sawTeam){sawTeam=true;ev('TeamLensViewed')}});
+var vp=document.querySelector('.vid video');if(vp)vp.addEventListener('play',function(){ev('TeamSimVideoPlay')},{once:true});
+</script>
+</body>
+</html>

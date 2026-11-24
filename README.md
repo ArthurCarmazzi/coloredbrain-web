@@ -11,6 +11,7 @@ Node.js (Express) server for the Colored Brain marketing site (app.coloredbrain.
 | `/webinar-thanks` | Masterclass registrants (hidden, noindex) | WebinarJam "thank you page" destination: fires Meta Lead + CompleteRegistration, pushes the free CBCI, add to calendar links for 23, 24 and 27 Nov |
 | `/vip-welcome` | $15 VIP buyers only (hidden, noindex) | Kartra checkout success page: fires Meta Purchase ($15), holds the private WhatsApp circle link. Never link it from a public page |
 | `/demo` | Ad traffic, lead magnet | The $10 Million Question: 5 question Emotional Drives demo, drive map, sample team prediction, opt in to Kartra then WebinarJam |
+| `/team-simulator` | LinkedIn and ad traffic | Solo personality test vs Colored Brain team lens simulator (Brain Color HOW plus Emotional Drives WHY), 36 second video, links to `/` and `/demo` |
 | `/intro` | Whop buyers (hidden) | Copy of the home page with a Special Introductory Offer banner, no Classic CBCI button, buy buttons pointing to Whop. Not linked from any menu, noindex; share the direct URL only |
 
 Old `.html` links (e.g. `/pricing.html`) redirect permanently to the clean URL. Unknown URLs get a branded 404 page. `/healthz` returns `{"ok":true}` for uptime checks.
@@ -53,6 +54,7 @@ public/pricing.html  pricing page
 public/trainers.html practitioner landing page
 public/intro.html    hidden Whop offer page (Whop links in the WHOP list at the bottom)
 public/webinar.html  masterclass registration page (dates and times in the hero and sessions blocks)
+public/team-simulator.html  solo vs team simulator (video in public/video/, share image public/img/team-simulator-og.jpg)
 public/demo.html     Emotional Drives demo and opt in (Kartra action URL and WebinarJam link at the top of the script)
 public/css/site.css  all styles; design tokens at the top, dark theme included
 public/img/          logo, brain illustrations, book cover, trainer kit, seals
