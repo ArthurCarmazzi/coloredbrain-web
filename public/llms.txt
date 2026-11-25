@@ -1,0 +1,27 @@
+# Colored Brain
+
+> Arthur Carmazzi is the founder of Directive Communication Psychology, the creator of the Colored Brain, and is ranked #1 in Organizational Culture by Global Gurus. The Colored Brain Predictive Psychology Engine reads how each person gets clarity (their Brain Color) and what drives them (their Emotional Drives), always in reference to the team they are in. Brain Color is not personality. It is HOW a brain gets clarity.
+
+## Free toys
+
+- [Four Brains, One Message](https://home.coloredbrain.com/four-brains): type or pick one vague message and see how the four Brain Colors hear it differently.
+- [The Team Simulator](https://home.coloredbrain.com/team-simulator): same person, different team. Flip between a solo personality test and the team lens and watch the friction move.
+- [What Kind of AI Culture Leader Are You?](https://home.coloredbrain.com/ai-culture-mixer): 10 sliders about what YOU do reveal one of five AI culture leader types and the culture it builds.
+- [All toys](https://home.coloredbrain.com/toys): the full list.
+
+## Core ideas
+
+- Brain Colors, four ways of getting clarity:
+  - Green, Chaotic: gets clarity by taking action.
+  - Red, Linear: gets clarity from structure, facts and sequence.
+  - Purple, Relational: gets clarity from detail and the full picture.
+  - Blue, Intuitive: gets clarity by sensing the pattern, the people and the meaning.
+- The 8 Emotional Drives (the WHY behind behavior): Love and Belonging, Security and Control, Diversity and Change, Significance and Recognition, Achievement, Growth and Challenge, Excellence, Contribution and Responsibility.
+- The five culture levels: Blame, Multi Directional, Live and Let Live, Brand Congruent, Leadership Enriched.
+
+## Main pages
+
+- [Home](https://home.coloredbrain.com/): the Colored Brain Communication Inventory (CBCI) and the engine.
+- [Pricing](https://home.coloredbrain.com/pricing)
+- [Coaches and trainers](https://home.coloredbrain.com/trainers)
+- [Certification](https://home.coloredbrain.com/certification)

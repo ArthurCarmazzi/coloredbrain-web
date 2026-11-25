@@ -13,6 +13,7 @@ Node.js (Express) server for the Colored Brain marketing site (app.coloredbrain.
 | `/demo` | Ad traffic, lead magnet | The $10 Million Question: 5 question Emotional Drives demo, drive map, sample team prediction, opt in to Kartra then WebinarJam |
 | `/team-simulator` | LinkedIn and ad traffic | Solo personality test vs Colored Brain team lens simulator (Brain Color HOW plus Emotional Drives WHY), 36 second video, links to `/` and `/demo` |
 | `/ai-culture-mixer` | LinkedIn traffic, leaders and coaches | What kind of AI culture leader are you toy: 10 first person sliders reveal one of 5 leader types (Judge to Leader Maker) and the culture it builds, plus a 5 type comparison table and a move to the next type, CTA to the AI Culture Pulse |
+| `/toys` | Search, AI crawlers, LinkedIn | Index of the three free toys (Four Brains, Team Simulator, AI Culture Leader) with a short why toys block and links to `/`, `/trainers` and the AI Culture Pulse |
 | `/intro` | Whop buyers (hidden) | Copy of the home page with a Special Introductory Offer banner, no Classic CBCI button, buy buttons pointing to Whop. Not linked from any menu, noindex; share the direct URL only |
 
 Old `.html` links (e.g. `/pricing.html`) redirect permanently to the clean URL. Unknown URLs get a branded 404 page. `/healthz` returns `{"ok":true}` for uptime checks.
@@ -57,6 +58,8 @@ public/intro.html    hidden Whop offer page (Whop links in the WHOP list at the 
 public/webinar.html  masterclass registration page (dates and times in the hero and sessions blocks)
 public/team-simulator.html  solo vs team simulator (video in public/video/, share image public/img/team-simulator-og.jpg)
 public/ai-culture-mixer.html  AI culture leader type toy (inline CSS and JS; video public/video/ai-culture-leader-types.mp4, poster public/img/ai-culture-leader-poster.jpg, share image public/img/ai-culture-mixer-share.jpg)
+public/toys.html  index page for the three free toys
+public/robots.txt, public/sitemap.xml, public/llms.txt  crawler files (sitemap lists only indexable pages; update lastmod when you change a page)
 public/demo.html     Emotional Drives demo and opt in (Kartra action URL and WebinarJam link at the top of the script)
 public/css/site.css  all styles; design tokens at the top, dark theme included
 public/img/          logo, brain illustrations, book cover, trainer kit, seals
