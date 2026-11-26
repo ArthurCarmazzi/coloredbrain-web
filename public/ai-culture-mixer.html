@@ -214,7 +214,7 @@ tr.you .youb{display:inline-block}
 
 <header class="hero"><div class="wrap hero-grid">
   <div>
-    <div class="eyebrow">AI CULTURE LEADER TOY</div>
+    <div class="eyebrow">AI CULTURE LEADER SIMULATOR</div>
     <h1>What kind of AI culture leader are <span>YOU</span>?</h1>
     <p class="lead">Your people already use AI. What they do with it depends on what YOU do. Move the 10 sliders honestly (nobody is watching) and meet the leader your team actually has... and the culture that leader is building.</p>
     <div class="warn" role="note"><b>FAIR WARNING</b>This is an Arthur Carmazzi thing. No soft serve. It will not flatter you and it does not care about your title. Want to feel good? Close the tab. Want the truth about the culture YOU are building? Slide.</div>
@@ -293,7 +293,7 @@ tr.you .youb{display:inline-block}
   </section>
 
   <div class="cta">
-    <h2>Want the real reading, not the toy?</h2>
+    <h2>Want the real reading, not the simulator?</h2>
     <p>This is a simplified model for playing with the idea. The AI Culture Pulse reads your actual team in 8 questions. Then ask yourself which leader you want to be by next summer.</p>
     <div class="row">
       <a class="btn" href="https://cultureevolution.com/ai-culture-pulse/" data-cta="pulse">Take the AI Culture Pulse</a>
@@ -301,9 +301,9 @@ tr.you .youb{display:inline-block}
       <a class="btn ghost" href="/team-simulator" data-cta="team-simulator">Try the Team Simulator</a>
     </div>
   </div>
-  <section class="more"><div class="lbl">More toys</div><div class="row"><a class="chip" href="/four-brains" data-cta="more-four-brains">Four Brains, One Message</a><a class="chip" href="/team-simulator" data-cta="more-team-simulator">The Team Simulator</a><a class="chip" href="/toys" data-cta="more-toys">All toys</a></div></section>
+  <section class="more"><div class="lbl">More simulators</div><div class="row"><a class="chip" href="/four-brains" data-cta="more-four-brains">Four Brains, One Message</a><a class="chip" href="/team-simulator" data-cta="more-team-simulator">The Team Simulator</a><a class="chip" href="/simulators" data-cta="more-simulators">All simulators</a></div></section>
   <p class="foot">Colored Brain and Emotional Drives are part of Directive Communication Psychology by Arthur Carmazzi.</p>
-  <p class="foot">The 5 leader types are an illustrative model built on Arthur Carmazzi's five levels of organizational culture. This is a toy, not an assessment.</p>
+  <p class="foot">The 5 leader types are an illustrative model built on Arthur Carmazzi's five levels of organizational culture. This is a simulator, not an assessment.</p>
 </main>
 
 <script>
@@ -539,7 +539,7 @@ $('copyBtn').addEventListener('click',function(){
 [].forEach.call(document.querySelectorAll('[data-cta]'),function(a){
   var base=a.getAttribute('href');
   if(a.getAttribute('data-cta')==='pulse'){
-    a.href=base+(location.search&&/utm_/.test(location.search)?location.search:'?utm_source=mixer&utm_medium=toy&utm_campaign=ai-culture-leader');
+    a.href=base+(location.search&&/utm_/.test(location.search)?location.search:'?utm_source=mixer&utm_medium=simulator&utm_campaign=ai-culture-leader');
   }else if(location.search)a.href=base+location.search;
   a.addEventListener('click',function(){ev('AICultureMixerCTA',{cta:a.getAttribute('data-cta')})});
 });

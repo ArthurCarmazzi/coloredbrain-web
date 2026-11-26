@@ -35,8 +35,14 @@ app.use((req, res, next) => {
   next();
 });
 
+// The free simulators hub used to live at /toys: send the old address (and old links, with any query string) to /simulators
+app.get(["/toys", "/toys.html"], (req, res) => {
+  const query = req.url.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
+  res.redirect(301, `/simulators${query}`);
+});
+
 // Old .html links keep working but move to clean URLs: /pricing.html -> /pricing
-app.get(/^\/(index|pricing|trainers|intro|webinar|demo|team-simulator|ai-culture-mixer|toys|webinar-thanks|vip-welcome)\.html$/, (req, res) => {
+app.get(/^\/(index|pricing|trainers|intro|webinar|demo|team-simulator|ai-culture-mixer|webinar-thanks|vip-welcome)\.html$/, (req, res) => {
   const page = req.params[0] === "index" ? "" : req.params[0];
   const query = req.url.includes("?") ? req.url.slice(req.url.indexOf("?")) : "";
   res.redirect(301, `/${page}${query}`);

@@ -1,0 +1,6 @@
+# Old address of the free simulators hub: send /toys and /toys.html to /simulators (permanent).
+# Only these two paths are touched; nothing else about routing is changed here.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^toys(\.html)?/?$ /simulators [R=301,L]
+</IfModule>
