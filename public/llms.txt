@@ -2,12 +2,12 @@
 
 > Arthur Carmazzi is the founder of Directive Communication Psychology, the creator of the Colored Brain, and is ranked #1 in Organizational Culture by Global Gurus. The Colored Brain Predictive Psychology Engine reads how each person gets clarity (their Brain Color) and what drives them (their Emotional Drives), always in reference to the team they are in. Brain Color is not personality. It is HOW a brain gets clarity.
 
-## Free toys
+## Free simulators
 
 - [Four Brains, One Message](https://home.coloredbrain.com/four-brains): type or pick one vague message and see how the four Brain Colors hear it differently.
 - [The Team Simulator](https://home.coloredbrain.com/team-simulator): same person, different team. Flip between a solo personality test and the team lens and watch the friction move.
 - [What Kind of AI Culture Leader Are You?](https://home.coloredbrain.com/ai-culture-mixer): 10 sliders about what YOU do reveal one of five AI culture leader types and the culture it builds.
-- [All toys](https://home.coloredbrain.com/toys): the full list.
+- [All simulators](https://home.coloredbrain.com/simulators): the full list.
 
 ## Core ideas
 

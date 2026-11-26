@@ -17,6 +17,13 @@ Scale it to the task: a typo fix gets a one line sell check at most; a new featu
 - **Fable (any version):** the checker at milestones. Reviews the work plus the brief, pokes holes, and only researches deeper where there are gaps. In Claude Code, run the review as a subagent on the Fable model.
 - **If Arthur forgets this process:** whatever model is running reminds him, or just runs it automatically. Never skip it silently.
 
+## Question our own ideas first (marketing challenger)
+
+- Before presenting or building anything important in marketing (public names and labels, positioning, offers, prices, new pages or simulators, funnels, campaigns, ad spend, content plans, anything hard to undo), a separate cheaper model agent with fresh context attacks the idea first.
+- It asks: is this the word the buyer actually uses, who pays, what result moves, what is evidence and what is opinion, what breaks, what is the case for the opposite.
+- Whatever model is running answers every question (fix it, check it, or name it as an open risk) and tells Arthur in a few lines what was questioned and what changed.
+- Arthur should not be the first person to ask the obvious question. Skip it for typos, bug fixes and routine posts in an approved format.
+
 ## Working style
 
 - When Arthur asks for something, just do it. Don't keep asking him to approve. Feedback before execution (pushback, a better idea) is very welcome; give it, then proceed.
